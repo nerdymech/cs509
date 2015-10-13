@@ -1,8 +1,8 @@
 package Actor;
 /**
  * The class defines Admin's operations including: <br>
- * 1,addLocations() <br>
- * 2,deleteLocation() <br>
+ * 1.addLocations() <br>
+ * 2.deleteLocation() <br>
  * @author Yuxiang
  * @version 1.0
  */

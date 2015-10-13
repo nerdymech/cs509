@@ -9,10 +9,10 @@ import Entity.Location;
 
 /**
  * The class includes functions mainly relating to Location manage including: <br>
- * 1,setLocation() <br>
- * 2,getLocation() <br>
- * 3,removeLocation() <br>
- * 4,calculateRoute() <br>
+ * 1.setLocation() <br>
+ * 2.getLocation() <br>
+ * 3.removeLocation() <br>
+ * 4.calculateRoute() <br>
  * @author Yuxiang
  * @version 1.0
  */

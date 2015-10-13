@@ -2,8 +2,8 @@ package Controller;
 
 /**
  * The class includes some system functions including: <br>
- * 1,exit() <br>
- * 2,reset() <br>
+ * 1.exit() <br>
+ * 2.reset() <br>
  * @author Yuxiang
  * @version 1.0
  */

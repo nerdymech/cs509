@@ -4,9 +4,9 @@ import Entity.Location;
 
 /**
  * The class includes functions mainly relating to display some map and line in pages including: <br>
- * 1,displayRoute() <br>
- * 2,displayFrontPage() <br>
- * 3,displayMapPage() <br>
+ * 1.displayRoute() <br>
+ * 2.displayFrontPage() <br>
+ * 3.displayMapPage() <br>
  * @author Yuxiang
  * @version 1.0
  */

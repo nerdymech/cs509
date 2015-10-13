@@ -21,7 +21,7 @@ public class Building {
     */
    private Coordinates coordinates;
    
-   public String getName() {
+    public String getName() {
 		return name;
 	}
 	public void setName(String name) {
@@ -38,5 +38,23 @@ public class Building {
 	}
 	public void setCoordinates(Coordinates coordinates) {
 		this.coordinates = coordinates;
+	}
+	  /**
+     *   * The function is used to add a building
+     * @author Yuxiang
+     * @version 1.0  
+     * @see Entity.Building
+     */
+	public void addBuilding(){
+		
+	}
+	/**
+     *   * The function is used to get the building details
+     * @author Yuxiang
+     * @version 1.0  
+     * @see Entity.Location
+     */
+	public void getBuilding(){
+		
 	}
 }

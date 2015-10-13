@@ -4,9 +4,9 @@ import Entity.Location;
 
 /**
  * The class defines GuestUser's operations including: <br>
- * 1,getRoute() <br>
- * 2,selectStartLocation() <br>
- * 3,selectEndLocation() <br>
+ * 1.getRoute() <br>
+ * 2.selectStartLocation() <br>
+ * 3.selectEndLocation() <br>
  * @author Yuxiang
  * @version 1.0
  */

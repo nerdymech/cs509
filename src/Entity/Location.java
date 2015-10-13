@@ -14,10 +14,7 @@ public class Location {
     *   Location's coordinate
     */
    private Coordinates coordinate;
-   /**
-    *   Location's floor
-    */
-   private Floor floor;
+  
    
    public String getName() {
 		return name;
@@ -31,10 +28,23 @@ public class Location {
 	public void setCoordinate(Coordinates coordinate) {
 		this.coordinate = coordinate;
 	}
-	public Floor getFloor() {
-		return floor;
+
+	  /**
+     *   * The function is used to add a location to a floor
+     * @author Yuxiang
+     * @version 1.0  
+     * @see Entity.Building
+     */
+	public void addLocation(){
+		
 	}
-	public void setFloor(Floor floor) {
-		this.floor = floor;
+	/**
+     *   * The function is used to get the location details
+     * @author Yuxiang
+     * @version 1.0  
+     * @see Entity.Location
+     */
+	public void getLocation(){
+		
 	}
 }

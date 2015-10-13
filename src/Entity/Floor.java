@@ -15,11 +15,8 @@ public class Floor {
 	/**
 	 * the list of locations which are on this floor
 	 */
-	private ArrayList<Location> loacations;
-	/**
-	 * the building which this floor belongs to
-	 */
-	private Building building;
+	private ArrayList<Location> locations;
+	
 	
 	public int getNumber() {
 		return number;
@@ -29,15 +26,27 @@ public class Floor {
 	}
 
 	public ArrayList<Location> getLoacations() {
-		return loacations;
+		return locations;
 	}
 	public void setLoacations(ArrayList<Location> loacations) {
-		this.loacations = loacations;
+		this.locations = loacations;
 	}
-	public Building getBuilding() {
-		return building;
+    /**
+     *   * The function is used to add a floor to building
+     * @author Yuxiang
+     * @version 1.0  
+     * @see Entity.Building
+     */
+	public void addFloor(){
+		
 	}
-	public void setBuilding(Building building) {
-		this.building = building;
+	/**
+     *   * The function is used to get the floors details
+     * @author Yuxiang
+     * @version 1.0  
+     * @see Entity.Location
+     */
+	public void getFloor(){
+		
 	}
 }
