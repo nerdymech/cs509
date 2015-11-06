@@ -7,6 +7,7 @@ import java.io.IOException;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Display;
@@ -38,6 +39,12 @@ public class MapPageGUI {
 		createContents();
 		shlSwtApplication.open();
 		shlSwtApplication.layout();
+		
+		Label banner = new Label(shlSwtApplication, SWT.NONE);
+		banner.setText("Welcome to WPI!");
+		banner.setBounds(0, 0, 435, 95);
+		banner.setImage(new Image(display,"wpiBanner.jpg"));
+		
 		while (!shlSwtApplication.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
@@ -51,29 +58,29 @@ public class MapPageGUI {
 	protected void createContents() {
 		shlSwtApplication = new Shell();
 		shlSwtApplication.setSize(451, 559);
-		shlSwtApplication.setText("SWT Application");
+		shlSwtApplication.setText("WPI Navigator");
 		
 		Combo comboBuilding1 = new Combo(shlSwtApplication, SWT.NONE);
 		comboBuilding1.setItems(new String[] {"tmp", "Higgins", "Campus Centre", "Project Centre"});
 		comboBuilding1.setBounds(42, 257, 158, 33);
 		
-		Label lblSelectLocation = new Label(shlSwtApplication, SWT.NONE);
-		lblSelectLocation.setBounds(222, 226, 80, 15);
-		lblSelectLocation.setText("Select Location");
+		Label lblSelectLocation1 = new Label(shlSwtApplication, SWT.NONE);
+		lblSelectLocation1.setBounds(272, 236, 80, 15);
+		lblSelectLocation1.setText("Select Location");
 					
 		Combo comboLocation1 = new Combo(shlSwtApplication, SWT.NONE);
-		comboLocation1.setBounds(222, 257, 158, 33);
+		comboLocation1.setBounds(233, 257, 158, 33);
 		
 		Combo comboBuilding2 = new Combo(shlSwtApplication, SWT.NONE);
 		comboBuilding2.setBounds(42, 386, 158, 33);
 		comboBuilding2.setItems(new String[] {"tmp", "Higgins", "Campus Centre", "Project Centre"});
 		
-		Label lblSelectLocation_1 = new Label(shlSwtApplication, SWT.NONE);
-		lblSelectLocation_1.setBounds(222, 355, 80, 15);
-		lblSelectLocation_1.setText("Select Location");
+		Label lblSelectLocation2 = new Label(shlSwtApplication, SWT.NONE);
+		lblSelectLocation2.setBounds(272, 365, 80, 15);
+		lblSelectLocation2.setText("Select Location");
 					
 		Combo comboLocation2 = new Combo(shlSwtApplication, SWT.NONE);
-		comboLocation2.setBounds(222, 386, 158, 33);
+		comboLocation2.setBounds(233, 386, 158, 33);
 		
 		//comboBuilding1.addModifyListener(listener);
 		
@@ -198,28 +205,28 @@ public class MapPageGUI {
 			}
 		});
       
-		Label lblSelectBuilding = new Label(shlSwtApplication, SWT.NONE);
-		lblSelectBuilding.setBounds(42, 226, 78, 15);
-		lblSelectBuilding.setText("Select Building");
+		Label lblSelectBuilding1 = new Label(shlSwtApplication, SWT.NONE);
+		lblSelectBuilding1.setBounds(84, 236, 78, 15);
+		lblSelectBuilding1.setText("Select Building");
 				
 		Label lblSelectStartLocation = new Label(shlSwtApplication, SWT.NONE);
-		lblSelectStartLocation.setBounds(118, 195, 107, 15);
+		lblSelectStartLocation.setBounds(162, 207, 107, 15);
 		lblSelectStartLocation.setText("Select Start Location");
 		
 		Label lblSelectEndLocation = new Label(shlSwtApplication, SWT.NONE);
-		lblSelectEndLocation.setBounds(118, 324, 105, 15);
+		lblSelectEndLocation.setBounds(164, 338, 105, 15);
 		lblSelectEndLocation.setText("Select End Location");
 		
-		Label lblSelectBuilding_1 = new Label(shlSwtApplication, SWT.NONE);
-		lblSelectBuilding_1.setBounds(42, 355, 80, 15);
-		lblSelectBuilding_1.setText("Select Building");
+		Label lblSelectBuilding2 = new Label(shlSwtApplication, SWT.NONE);
+		lblSelectBuilding2.setBounds(82, 365, 80, 15);
+		lblSelectBuilding2.setText("Select Building");
 		
 		Button btnGuide = new Button(shlSwtApplication, SWT.NONE);
-		btnGuide.setBounds(143, 458, 105, 35);
+		btnGuide.setBounds(164, 457, 105, 35);
 		btnGuide.setText("Guide");
 		
 		Label lblPleaseSelectA = new Label(shlSwtApplication, SWT.NONE);
-		lblPleaseSelectA.setBounds(10, 145, 278, 15);
+		lblPleaseSelectA.setBounds(84, 144, 278, 15);
 		lblPleaseSelectA.setText("Please select a building before looking for a location.");
 		
 		//trial.addItemListener(new ItemListener() {
