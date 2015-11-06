@@ -1,3 +1,4 @@
+package GUI;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -24,7 +25,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class MyFrame extends JFrame{
+public class AdminGUI extends JFrame{
 	final Image img = Toolkit.getDefaultToolkit().getImage("/Users/bangkura/Documents/workspace/UI/image.jpg"); 
 	class point {
 		int x;
@@ -41,15 +42,20 @@ public class MyFrame extends JFrame{
 			this.start = start;
 			this.end = end;
 		}
+		public int calculateLength(){
+			int squares = (int)Math.pow(start.x-end.x, 2) + (int)Math.pow(start.y-end.y, 2);
+			return (int)Math.sqrt(squares);
+		}
 	}
 	class ArcsPanel extends JPanel {
+			//draw map panel of GUI
 			int mode = 0;
 			point new_point = null;
 			point selected_point = null;
 			point edge_start_point = null;
 			point edge_end_point = null;
-			List list = new ArrayList();
-			List edge_list = new ArrayList();
+			List list = new ArrayList(); //List of Points
+			List edge_list = new ArrayList();//List of Edges
 			public ArcsPanel(){
 //				list.add(new point(30,50));
 //				list.add(new point(40,40));
@@ -60,7 +66,7 @@ public class MyFrame extends JFrame{
 			}
 			protected void paintComponent(Graphics g) { 
 		    super.paintComponent(g);  
-		    g.setColor(Color.BLUE); //设置弧形的颜色为蓝色  
+		    g.setColor(Color.BLUE);  
 		    this.setBounds(0,0,500,500); 
 		    int xCenter = getWidth() / 2;  
 		    int yCenter = getHeight() / 2;  
@@ -75,7 +81,7 @@ public class MyFrame extends JFrame{
 		    	g.drawLine(e.start.x+5, e.start.y+5, e.end.x+5, e.end.y+5);
 		    	System.out.println("the edge is created");
 		    }
-		    //使用while循环画弧形
+		    
 		    for(int i = 0; i < list.size(); ++i) {
 		    	point p = (point) list.get(i);
 		        g.fillArc(p.x, p.y, 10, 10, 0, 360);  
@@ -98,7 +104,7 @@ public class MyFrame extends JFrame{
 		    }
 		  }  
 	}  
-	public MyFrame() throws IOException {
+	public AdminGUI() throws IOException {
 		JLabel l=new JLabel("lll");
 		Icon icon=new ImageIcon("/Users/bangkura/Documents/workspace/UI/image.jpg");
 		//在此直接创建对象
@@ -277,7 +283,7 @@ public class MyFrame extends JFrame{
 		this.setLocation((screenSize.width-frameSize.width)/2,(screenSize.height-frameSize.height)/10);
 	}
 	public static void main(String[] args) throws IOException {
-		MyFrame h = new MyFrame();
+		AdminGUI h = new AdminGUI();
 		h.setTitle("hello");
 		h.setSize(1000,500);
 		h.setVisible(true);
