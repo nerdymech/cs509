@@ -38,9 +38,11 @@ public class AdminGUI extends JFrame{
 	class edge {
 		point start;
 		point end;
-		public edge(point start, point end) {
+		int lengthEdge;
+		public edge(point start, point end, int lengthEdge) {
 			this.start = start;
 			this.end = end;
+			this.lengthEdge = calculateLength();
 		}
 		public int calculateLength(){
 			int squares = (int)Math.pow(start.x-end.x, 2) + (int)Math.pow(start.y-end.y, 2);
