@@ -4,11 +4,16 @@
 public class Vertex {
     final private String id;
     final private String name;
-
+//    final private String building;
+//    final private String floor;
+    // final private String attribute;
+    // final private String feature;
 
     public Vertex(String id, String name) {
         this.id = id;
         this.name = name;
+//        this.building = building;
+//        this.floor = floor;
     }
 
     public String getId() {
@@ -18,6 +23,14 @@ public class Vertex {
     public String getName() {
         return name;
     }
+
+//    public String getBuilding{
+//        return building;
+//    }
+
+//    public  String getFloor{
+//        return floor;
+//    }
 
     @Override
     public int hashCode() {
