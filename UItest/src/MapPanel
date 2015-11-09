@@ -1,0 +1,74 @@
+public class MapPanel extends JFrame{
+	final Image img = Toolkit.getDefaultToolkit().getImage("1st floor_CC.jpg"); 
+	class point {
+		int x;
+		int y;
+		public point(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
+	}
+	class edge {
+		point start;
+		point end;
+		public edge(point start, point end) {
+			this.start = start;
+			this.end = end;
+		}
+	}
+	class ArcsPanel extends JPanel {
+			int mode = 0;
+			point new_point = null;
+			point selected_point = null;
+			point edge_start_point = null;
+			point edge_end_point = null;
+			List list = new ArrayList();
+			List edge_list = new ArrayList();
+			public ArcsPanel(){
+//				list.add(new point(30,50));
+//				list.add(new point(40,40));
+//				list.add(new point(50,30));
+//				list.add(new point(60,20));
+//				list.add(new point(70,10));
+//				list.add(new point(80,90));
+			}
+			protected void paintComponent(Graphics g) { 
+		    super.paintComponent(g);  
+		    g.setColor(Color.BLUE); //  
+		    this.setBounds(0,0,500,500); 
+		    int xCenter = getWidth() / 2;  
+		    int yCenter = getHeight() / 2;  
+		    int radius = (int)(Math.min(getWidth(), getHeight()) * 0.4);  
+		    int x = xCenter - radius;  
+		    int y = yCenter - radius;
+		    
+		    g.drawImage(img, 0, 0, 500, 500, this);
+		    for(int i = 0; i < edge_list.size(); ++i) {
+		    	System.out.println("size " + i);
+		    	edge e = (edge) edge_list.get(i);
+		    	g.drawLine(e.start.x+5, e.start.y+5, e.end.x+5, e.end.y+5);
+		    	System.out.println("the edge is created");
+		    }
+		    //浣跨敤while寰幆鐢诲姬褰�
+		    for(int i = 0; i < list.size(); ++i) {
+		    	point p = (point) list.get(i);
+		        g.fillArc(p.x, p.y, 10, 10, 0, 360);  
+		    }
+		    g.setColor(Color.RED);
+		    if(selected_point != null) {
+		    	g.fillArc(selected_point.x, selected_point.y, 10, 10, 0, 360);
+		    }
+		    g.setColor(Color.GREEN);
+		    if(edge_start_point != null) {
+		    	g.fillArc(edge_start_point.x, edge_start_point.y, 10, 10, 0, 360);
+		    }
+		    g.setColor(Color.YELLOW);
+		    if(edge_end_point != null) {
+		    	g.fillArc(edge_end_point.x, edge_end_point.y, 10, 10, 0, 360);
+		    }
+		    g.setColor(Color.CYAN);
+		    if(new_point != null) {
+		    	g.fillArc(new_point.x, new_point.y, 10, 10, 0, 360);
+		    }
+		  }  
+	}  
