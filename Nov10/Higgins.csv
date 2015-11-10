@@ -1,0 +1,16 @@
+Point_ID,X,Y,Building,Floor,Attributes,Entrance ID,Room number,Feature name
+1,345,586,HigginsLab,1,3,1,0,aaa
+2,372,601,HigginsLab,1,1,0,0,aaa
+3,485,594,HigginsLab,1,1,0,0,aaa
+4,185,291,HigginsLab,1,2,0,133,aaa
+5,284,745,HigginsLab,1,3,2,0,aaa
+9,100,100,sdad,1,2,3,5,aaa19973,196,350,Campus Center 1st Floor,0,0,0,0,a
+26071,257,348,Campus Center 1st Floor,0,0,0,0,b
+26121,258,298,Campus Center 1st Floor,0,0,0,0,c
+27886,276,263,Campus Center 1st Floor,0,0,0,0,d
+23066,228,243,Campus Center 1st Floor,0,0,0,0,e
+16219,159,296,Campus Center 1st Floor,0,0,0,0,f
+26896,267,173,Campus Center 1st Floor,0,0,0,0,1
+37936,377,213,Campus Center 1st Floor,0,0,0,0,2
+36160,360,137,Campus Center 1st Floor,0,0,0,0,3
+30887,308,64,Campus Center 1st Floor,0,0,0,0,4
