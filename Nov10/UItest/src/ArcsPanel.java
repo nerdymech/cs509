@@ -29,8 +29,7 @@ class ArcsPanel extends JPanel {
 	private final Color NEW_EDGE_COLOR = Color.BLACK;
 	private final Color NEW_POINT_COLOR = Color.CYAN;
 	
-	Image img = Toolkit.getDefaultToolkit().getImage("./Images/1stFloorCC.jpg");
-	
+	Image img =	Toolkit.getDefaultToolkit().createImage(this.getClass().getResource("/Images/1stFloorCC.jpg"));
 	int mode = DEFAULT_MODE;
 	Point new_Point = null;
 	Point selected_Point = null;
@@ -44,7 +43,7 @@ class ArcsPanel extends JPanel {
 	String building = "Campus Center 1st Floor";
 	
 	public void loadImage(String image_name) {
-		img = Toolkit.getDefaultToolkit().getImage("./Images" + image_name + ".jpg");
+		img = Toolkit.getDefaultToolkit().createImage(this.getClass().getResource("Images/" + image_name + ".jpg"));
 	}
 	public ArcsPanel(){
 		DatabaseMethods DB = new DatabaseMethods();

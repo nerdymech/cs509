@@ -13,10 +13,10 @@ import Entity.Point;
 public class UserMapTool extends JPanel{
 	Point sp = null;
 	Point ep = null;
-	Image img = Toolkit.getDefaultToolkit().getImage("/Users/bangkura/Documents/workspace/UI/Campus Center 1st 2Floor.jpg");
+	Image img = Toolkit.getDefaultToolkit().createImage(this.getClass().getResource("/Images/1stFloorCC.jpg"));
 	public LinkedList<Vertex> path = null;
 	public void loadImage(String image_name) {
-		img = Toolkit.getDefaultToolkit().getImage("/Users/bangkura/Documents/workspace/UI/" + image_name + ".jpg");
+		img = Toolkit.getDefaultToolkit().createImage(this.getClass().getResource("/Images/" + image_name + ".jpg"));
 	}
 	
 	protected void paintComponent(Graphics g) {

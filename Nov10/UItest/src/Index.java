@@ -18,7 +18,8 @@ public class Index extends JFrame{
 	public Index() {
 		//this.setLayout(new BorderLayout());
 		JLabel banner = new JLabel();
-		Image icon_image = Toolkit.getDefaultToolkit().getImage("/Images/BANNER.JPG");
+		//call image from relative path
+		Image icon_image = Toolkit.getDefaultToolkit().createImage(this.getClass().getResource("/Images/BANNER.jpg"));
 		ImageIcon Icon = new ImageIcon(icon_image);
 		JPanel input_panel = new JPanel();
 		banner.setIcon(Icon);
