@@ -1,0 +1,77 @@
+Point_ID,X,Y,Building,Floor,Attributes,Entrance ID,Room number,Feature nameImageURLShowOnMap
+1,345,586,HigginsLab,1,3,1,0,aaa,ppppppppp,false
+2,372,601,HigginsLab,1,1,0,0,aaa,ppppppppp,false
+3,485,594,HigginsLab,1,1,0,0,aaa,ppppppppp,false
+4,185,291,HigginsLab,1,2,0,133,aaa,ppppppppp,false
+5,284,745,HigginsLab,1,3,2,0,aaa,ppppppppp,false
+9,100,100,sdad,1,2,3,5,aaa19973,ppppppppp,false
+14374,140,351,Campus Center 1st Floor,0,0,0,0,158,ppppppppp,false
+20074,197,351,Campus Center 1st Floor,0,0,0,0,157,ppppppppp,false
+22026,217,303,Campus Center 1st Floor,0,0,0,0,156,ppppppppp,false
+25063,247,340,Campus Center 1st Floor,0,0,0,0,155,ppppppppp,false
+28376,280,353,Campus Center 1st Floor,0,0,0,0,154,ppppppppp,false
+26211,259,288,Campus Center 1st Floor,0,0,0,0,153,ppppppppp,false
+26359,261,236,Campus Center 1st Floor,0,0,0,0,134,ppppppppp,false
+16927,167,204,Campus Center 1st Floor,0,0,0,0,12,ppppppppp,false
+14518,143,195,Campus Center 1st Floor,0,0,0,0,130,ppppppppp,false
+12697,124,274,Campus Center 1st Floor,0,0,0,0,132,ppppppppp,false
+9011,88,188,Campus Center 1st Floor,0,0,0,0,127,ppppppppp,false
+13925,137,202,Campus Center 1st Floor,0,0,0,0,128,ppppppppp,false
+14902,147,179,Campus Center 1st Floor,0,0,0,0,120,ppppppppp,false
+2049,17,326,Campus Center 1st Floor,0,0,0,0,112,ppppppppp,false
+4300,39,377,Campus Center 1st Floor,0,0,0,0,110,ppppppppp,false
+5000,46,377,Campus Center 1st Floor,0,0,0,0,109,ppppppppp,false
+4295,40,272,Campus Center 1st Floor,0,0,0,0,113,ppppppppp,false
+7716,75,193,Campus Center 1st Floor,0,0,0,0,114,ppppppppp,false
+5537,53,214,Campus Center 1st Floor,0,0,0,0,120,ppppppppp,false
+7264,71,141,Campus Center 1st Floor,0,0,0,0,122,ppppppppp,false
+5460,53,137,Campus Center 1st Floor,0,0,0,0,123,ppppppppp,false
+8442,83,119,Campus Center 1st Floor,0,0,0,0,11,ppppppppp,false
+8587,84,164,Campus Center 1st Floor,0,0,0,0,126,ppppppppp,false
+16441,163,118,Campus Center 1st Floor,0,0,0,0,125,ppppppppp,false
+34498,342,275,Campus Center 1st Floor,0,0,0,0,13,ppppppppp,false
+33506,332,283,Campus Center 1st Floor,0,0,0,0,137,ppppppppp,false
+39012,387,289,Campus Center 1st Floor,0,0,0,0,138,ppppppppp,false
+38059,377,336,Campus Center 1st Floor,0,0,0,0,139,ppppppppp,false
+40213,399,290,Campus Center 1st Floor,0,0,0,0,140,ppppppppp,false
+39466,391,343,Campus Center 1st Floor,0,0,0,0,145,ppppppppp,false
+13917,135,394,Campus Center 1st Floor,0,0,0,0,147,ppppppppp,false
+37917,375,394,Campus Center 1st Floor,0,0,0,0,144,ppppppppp,false
+8140,79,217,Campus Center 1st Floor,0,0,0,0,1002,ppppppppp,false
+8172,79,249,Campus Center 1st Floor,0,0,0,0,1003,aaaaaaa,false
+4240,39,317,Campus Center 1st Floor,0,0,0,0,1004,aaaaaaa,false
+10000,96,377,Campus Center 1st Floor,0,0,0,0,1005,aaaaaaa,false
+8146,79,223,Campus Center 2nd Floor,0,0,0,0,208,aaaaaaa,false
+7613,74,190,Campus Center 2nd Floor,0,0,0,0,209,aaaaaaa,false
+8437,81,314,Campus Center 2nd Floor,0,0,0,0,203,aaaaaaa,false
+5994,57,271,Campus Center 2nd Floor,0,0,0,0,202,aaaaaaa,false
+15557,153,234,Campus Center 2nd Floor,0,0,0,0,12,aaaaaaa,false
+24571,243,248,Campus Center 2nd Floor,0,0,0,0,236,aaaaaaa,false
+13747,134,324,Campus Center 2nd Floor,0,0,0,0,entrance,aaaaaaa,false
+16863,165,340,Campus Center 2nd Floor,0,0,0,0,cc & events offices,aaaaaaa,false
+27390,271,267,Campus Center 2nd Floor,0,0,0,0,bookstore,aaaaaaa,false
+36776,365,253,Campus Center 2nd Floor,0,0,0,0,13,aaaaaaa,false
+41576,413,253,Campus Center 2nd Floor,0,0,0,0,242,aaaaaaa,false
+40789,405,266,Campus Center 2nd Floor,0,0,0,0,244,aaaaaaa,false
+42689,424,266,Campus Center 2nd Floor,0,0,0,0,241,aaaaaaa,false
+39320,390,297,Campus Center 2nd Floor,0,0,0,0,240,aaaaaaa,false
+36698,364,275,Campus Center 2nd Floor,0,0,0,0,250,aaaaaaa,false
+32793,325,270,Campus Center 2nd Floor,0,0,0,0,252,aaaaaaa,false
+43905,436,282,Campus Center 2nd Floor,0,0,0,0,245,aaaaaaa,false
+42545,422,322,Campus Center 2nd Floor,0,0,0,0,248,aaaaaaa,false
+9913,98,90,Campus Center 2nd Floor,0,0,0,0,11,aaaaaaa,false
+14325,142,102,Campus Center 2nd Floor,0,0,0,0,227,aaaaaaa,false
+14936,148,113,Campus Center 2nd Floor,0,0,0,0,228,aaaaaaa,false
+9578,94,155,Campus Center 2nd Floor,0,0,0,0,232,aaaaaaa,false
+8950,88,127,Campus Center 2nd Floor,0,0,0,0,216,aaaaaaa,false
+8080,79,157,Campus Center 2nd Floor,0,0,0,0,218,aaaaaaa,false
+8234,81,111,Campus Center 2nd Floor,0,0,0,0,217,aaaaaaa,false
+9717,95,194,Campus Center 2nd Floor,0,0,0,0,235,aaaaaaa,false
+9723,96,100,Campus Center 2nd Floor,0,0,0,0,2001,aaaaaaa,false
+33536,332,313,Campus Center 2nd Floor,0,0,0,0,2002,aaaaaaa,false
+26155,258,332,Campus Center 1st Floor,0,0,0,0,198,aaaaaaa,false
+23875,237,151,Project Center 1st Floor,0,0,0,0,123,aaaaaaa,false
+28610,283,286,Project Center 1st Floor,0,0,0,0,555,aaaaaaa,false
+44922,445,399,Campus Center 1st Floor,0,0,0,0,stair,aaaaaaa,false
+10,567890,876534,test,10,1,0,100,bbb,asdfghjkl,false
+11,23423,12312,test,10,1,0,100,bbb,asdfghjkl,false
