@@ -71,6 +71,10 @@ public class SideBar extends JPanel{
 				jf.setSize(1000, 750);
 				jf.setVisible(true);
 				jf.add(mp);
+				
+				// Sets the main JFrame visibility to false and closes it.
+				Main.jf.setVisible(false);
+				Main.jf.dispose();
 			}
 		});
 		

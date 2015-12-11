@@ -16,6 +16,10 @@ import com.bangkura.Entity.Edge;
 import com.bangkura.Entity.User;
 
 public class Main {
+	// JFrame made public so the object can be called within this class
+	// and in SideBar.java without passing the object
+	public static JFrame jf = new JFrame("hello");
+	
 	public static void main(String[] args) {
 		DatabaseMethods DB = new DatabaseMethods();
 		ArrayList<Edge> edgelist = DB.ReadEdges();
@@ -33,7 +37,6 @@ public class Main {
 			ImageIcon icon = new ImageIcon("Campus Center 1st Floor.jpg");
 			JLabel map = new JLabel(icon);
 			map.setSize(1000,750);
-			JFrame jf = new JFrame("hello");
 			jf.setSize(1000, 750);
 			CardLayout cardlayout = new CardLayout();
 			jf.setLayout(cardlayout);
