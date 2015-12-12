@@ -12,9 +12,14 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Array;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.regex.Pattern;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -133,7 +138,14 @@ public class AdminTool extends JPanel{
 				}
 			});
 		}
-		img = Toolkit.getDefaultToolkit().getImage(image_name + ".jpg");
+		
+		// Create variables to hold the absolute path fo the project
+		Path currentRelativePath = Paths.get("");
+    	String s = currentRelativePath.toAbsolutePath().toString();
+		String folderPath = s + "\\Maps\\";
+		
+		// Replace the welcome.jpg image with the map of the building selected from the Maps folder
+		img = Toolkit.getDefaultToolkit().getImage(folderPath + image_name + ".jpg");
 		repaint();
 	}
 	
@@ -141,6 +153,39 @@ public class AdminTool extends JPanel{
 		for(PointLabel p:pointlist) {
 			p.zoom(convert_x(p.x), convert_y(p.y));
 		}
+	}
+	
+	/***
+	 * Initializes the combobox for selected the buildings
+	 */
+	private File[] getImages() {
+		// Store the path of the project into a variable
+    	Path currentRelativePath = Paths.get("");
+    	String s = currentRelativePath.toAbsolutePath().toString();
+		String folderPath = s + "\\Maps\\";
+        File mapImage = new File(folderPath);
+        
+		// Create a variable to hold the list of images
+        File[] listOfFiles = mapImage.listFiles();
+		
+        // Search through the Maps directory
+		if (mapImage.isDirectory()) {
+			
+			// Print to console for testing purposes
+			if (listOfFiles.length == 0)
+				System.out.println("There are no maps inside the Maps Folder");
+			else
+				System.out.println("List of images:");
+			 
+			for (File file : listOfFiles) {
+				if(!file.isDirectory()) {
+					System.out.println(file.getName().substring(0, file.getName().lastIndexOf('.')));
+				}
+			}
+		}
+		
+		// Return the list of images
+		return listOfFiles;
 	}
 	
 	public AdminTool() {
@@ -157,15 +202,29 @@ public class AdminTool extends JPanel{
 		this.add(menu);
 		this.add(selectImage);
 		
-		//Initial of the combobox
+		// Initialize the combobox with null and campus
 		Vector<String> building_menu_item = new Vector<String>();
 		building_menu_item.add("null");
 		building_menu_item.add("campus");
-		building_menu_item.add("Campus Center 1st Floor");
+		
+		// Call getImages to fill in the read of the combobox with all of the images in the Maps folder
+		File[] listOfFiles = getImages();
+		
+		// Original code here
+		/*building_menu_item.add("Campus Center 1st Floor");
 		building_menu_item.add("Campus Center 2nd Floor");
 		building_menu_item.add("Campus Center 3rd Floor");
 		building_menu_item.add("Project Center 1st Floor");
-		building_menu_item.add("Project Center 2nd Floor");
+		building_menu_item.add("Project Center 2nd Floor");*/
+		
+		// Search through the list of image files and parse out just the image name without the extension
+		// and add it to the combo box
+		for (File file : listOfFiles) {
+			if(!file.isDirectory()) {
+				building_menu_item.add(file.getName().substring(0, file.getName().lastIndexOf('.')));
+			}
+		}
+		
 		map_select_menu = new JComboBox(building_menu_item);
 		map_select_menu.setBounds(300,20,350,40);
 		this.add(map_select_menu);
@@ -248,7 +307,6 @@ public class AdminTool extends JPanel{
 		        });
 			}
 		});
-
 
 		//listener for the drag function
 		this.addMouseListener(new MouseListener() {
