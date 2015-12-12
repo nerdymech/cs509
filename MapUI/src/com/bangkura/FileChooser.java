@@ -56,31 +56,107 @@ public class FileChooser extends JPanel implements ActionListener {
     	
         // Handle open and save button action.
         if (e.getSource() == openButton) {
+        	
         	// Open a Windows Explorer to choose a file
             int returnVal = fc.showOpenDialog(FileChooser.this);
-
-            // Compare the current selected file to the file in the project if it exists
-            String s2 = s + "\\" + fc.getSelectedFile().getName();
-			String pattern = Pattern.quote(System.getProperty("file.separator"));
-			String[] tokens = s2.split(pattern);
-			System.out.println(fc.getSelectedFile().getName());
-			System.out.println(tokens[tokens.length - 1]);
-			
-			// Loop to test to see if the current selected file and the file in the project already match
-			while (fc.getSelectedFile().getName().equals(tokens[tokens.length - 1])) {
-				// If the user cancels, exit the Windows Explorer
-				if (returnVal == JFileChooser.CANCEL_OPTION)
-					break;
-				// If the current selected file and the file in the project match, ask for a new file
-				else if (fc.getSelectedFile().getName().equals(tokens[tokens.length - 1])) {
-					System.out.println("Error! The file already exists! Please choose another one.");
-					log.append("Error! The file already exists! Please choose another one." + newline);
-					returnVal = fc.showOpenDialog(FileChooser.this);
-				}
-				// If the current selected file and the file in the project don't match, exit
-				else if (returnVal == JFileChooser.APPROVE_OPTION)
-					break;
-			}
+            
+            // Create a variable to contain the absolute location of the location you want to
+            // save the file to
+            String s2 = s + "\\Maps\\" + fc.getSelectedFile().getName();
+            System.out.println(s2);
+            System.out.println(fc.getSelectedFile().getName());
+            
+            // Variables needed to search through the Maps folder
+            String folderPath = s + "\\Maps\\";
+            File mapImage = new File(folderPath);
+            
+            // Search through the directory
+            if (mapImage.isDirectory()) {
+            	
+            	// Create an array for all of the files, and variables needed to search through the directory
+	            File[] listOfFiles = mapImage.listFiles();
+	            boolean restart = true;
+	            int filesLeft = listOfFiles.length;
+	            
+	            // Print to the console for testing purposes
+	            if (listOfFiles.length == 0)
+	            	System.out.println("There are no images inside the Maps folder.");
+	            else
+	            	System.out.println("List of images:");
+	            
+	            // While loop used here in case if a new file is selected and already exists
+	            while (restart == true) {
+	            	
+	            	// The for loop actually iterates through the Maps folder
+		            for (File file : listOfFiles) {
+		            	
+		            	// Iterate only through files that are not directories
+		            	if(!file.isDirectory())
+							try {
+								// Create a pattern for the parse.
+								// Parse the files by a "/" delimiter and save it into an array
+								// containing the image file name
+								String pattern = Pattern.quote(System.getProperty("file.separator"));
+								String[] tokens = file.getCanonicalPath().toString().split(pattern);
+								
+								// If there are no images, add the image to the Map folder
+								if (tokens.length == 0) {
+									System.out.println("There are no images inside the Maps folder.");
+									restart = false;
+									break;
+								}
+								// If there are images in the folder, print out the last index's image name
+								else
+									System.out.println(tokens[tokens.length - 1]);
+								
+								// Compare the current selected file to the parsed array containing the image name
+								if (tokens[tokens.length - 1].equals(fc.getSelectedFile().getName())) {
+									System.out.println("The file already exists.");
+									
+									// While the current selected file equals the parsed array image name, open
+									// the Windows Explorer again to choose a new file
+									while (tokens[tokens.length - 1].equals(fc.getSelectedFile().getName())) {
+										
+										// If the user cancels, exit the Windows Explorer
+										if (returnVal == JFileChooser.CANCEL_OPTION) {
+											if (restart == true)
+												restart = false;
+											break;
+										}
+										// If the current selected file and the file in the project match, ask for a new file
+										// and reset the number of files left in case if the new file they select already exists
+										else if (tokens[tokens.length - 1].equals(fc.getSelectedFile().getName())) {
+											System.out.println("Error! The file already exists! Please choose another one.");
+											log.append("Error! The file already exists! Please choose another one." + newline);
+											returnVal = fc.showOpenDialog(FileChooser.this);
+											filesLeft = listOfFiles.length;
+											restart = true;
+										}
+										// If the current selected file and the file in the project don't match, exit
+										else if (returnVal == JFileChooser.APPROVE_OPTION) {
+											if (restart == true)
+												restart = false;
+											break;
+										}
+									}
+									break;
+								}
+								// Count down the number of files. If the current selected file doesn't match any file
+								// in the parsed array, then add it to the Maps folder.
+								else {
+									--filesLeft;
+									if (filesLeft == 0) {
+										restart = false;
+										break;
+									}
+								}
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+		            }
+	            }
+            }
             
             if (returnVal == JFileChooser.APPROVE_OPTION) {
         		try {
@@ -89,6 +165,8 @@ public class FileChooser extends JPanel implements ActionListener {
         			
         			// Create a file with it's name, extension, and contents
         			File file = new File(s2);
+        			
+        			//System.out.println(file.getPath()); // C:\Users\Kennedy Tran\Desktop\cs509\MapUI\Maps\Project Center 3rd Floor.jpg
         			
         			// Log to the Window's console that the file is being read
           	      	log.append("Opening: " + file.getName() + "." + newline);
