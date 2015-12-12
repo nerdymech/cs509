@@ -1,27 +1,28 @@
-
 //modified file chooser demo from official java tutorials
 //feeds file name to the admin tool
 package com.bangkura;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.regex.Pattern;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.filechooser.*;
 
-
-public class FileChooser extends JPanel
-                             implements ActionListener {
+public class FileChooser extends JPanel implements ActionListener {
     static private final String newline = "\n";
-    JButton openButton, saveButton;
+    JButton openButton;
     JTextArea log;
     JFileChooser fc;
 
     public FileChooser() {
         super(new BorderLayout());
 
-        //Create the log first, because the action listeners
-        //need to refer to it.
+        // Create the log first because the action listeners need to refer to it.
         log = new JTextArea(5,20);
         log.setMargin(new Insets(5,5,5,5));
         log.setEditable(false);
@@ -36,17 +37,12 @@ public class FileChooser extends JPanel
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
         //Create the open button.  
-        openButton = new JButton("Open a File...");
+        openButton = new JButton("Open and Save File");
         openButton.addActionListener(this);
-        
-        //Create the save button.
-        saveButton = new JButton("Save a File...");
-        saveButton.addActionListener(this);
 
         //For layout purposes, put the buttons in a separate panel
         JPanel buttonPanel = new JPanel(); //use FlowLayout
         buttonPanel.add(openButton);
-        buttonPanel.add(saveButton);
 
         //Add the buttons and the log to this panel.
         add(buttonPanel, BorderLayout.PAGE_START);
@@ -54,39 +50,64 @@ public class FileChooser extends JPanel
     }
 
     public void actionPerformed(ActionEvent e) {
-
-        //Handle open button action.
+    	// Store the path of the project into a variable
+    	Path currentRelativePath = Paths.get("");
+    	String s = currentRelativePath.toAbsolutePath().toString();
+    	
+        // Handle open and save button action.
         if (e.getSource() == openButton) {
+        	// Open a Windows Explorer to choose a file
             int returnVal = fc.showOpenDialog(FileChooser.this);
 
+            // Compare the current selected file to the file in the project if it exists
+            String s2 = s + "\\" + fc.getSelectedFile().getName();
+			String pattern = Pattern.quote(System.getProperty("file.separator"));
+			String[] tokens = s2.split(pattern);
+			System.out.println(fc.getSelectedFile().getName());
+			System.out.println(tokens[tokens.length - 1]);
+			
+			// Loop to test to see if the current selected file and the file in the project already match
+			while (fc.getSelectedFile().getName().equals(tokens[tokens.length - 1])) {
+				// If the user cancels, exit the Windows Explorer
+				if (returnVal == JFileChooser.CANCEL_OPTION)
+					break;
+				// If the current selected file and the file in the project match, ask for a new file
+				else if (fc.getSelectedFile().getName().equals(tokens[tokens.length - 1])) {
+					System.out.println("Error! The file already exists! Please choose another one.");
+					log.append("Error! The file already exists! Please choose another one." + newline);
+					returnVal = fc.showOpenDialog(FileChooser.this);
+				}
+				// If the current selected file and the file in the project don't match, exit
+				else if (returnVal == JFileChooser.APPROVE_OPTION)
+					break;
+			}
+            
             if (returnVal == JFileChooser.APPROVE_OPTION) {
-            	//getSelectedFile() returns the file path of the selected file
-                File file = fc.getSelectedFile();
-                //verify that the file path is what gets returned
-                //System.out.println(file); 
-                //This is where a real application would open the file.
-                log.append("Opening: " + file.getName() + "." + newline);
-            } else {
-                log.append("Open command cancelled by user." + newline);
-            }
-            log.setCaretPosition(log.getDocument().getLength());
-            }
-
-        //Handle save button action.
-        else if (e.getSource() == saveButton) {
-        	
-        	int returnVal = fc.showSaveDialog(FileChooser.this);
-        	if (returnVal == JFileChooser.APPROVE_OPTION) {
-        		File file = fc.getSelectedFile();
-        		//This is where a real application would save the file.
-        		log.append("Saving: " + file.getName() + "." + newline);
-        	} else {
-        		log.append("Save command cancelled by user." + newline);
+        		try {
+        			// Read in the file and store it as a BufferedImage
+        			BufferedImage bufferedImage = ImageIO.read(new File(fc.getSelectedFile().toString()));
+        			
+        			// Create a file with it's name, extension, and contents
+        			File file = new File(s2);
+        			
+        			// Log to the Window's console that the file is being read
+          	      	log.append("Opening: " + file.getName() + "." + newline);
+          	      	
+          	      	// Save the file to the project
+          	      	ImageIO.write(bufferedImage, "jpg", file);
+          	      	
+          	      	// Log to the Window's console that the file is being read
+          	      	log.append("Saving: " + file.getName() + "." + newline);
+          	    } catch (Exception e1) {
+          	    	e1.printStackTrace();
+          	    }
         	}
-        	log.setCaretPosition(log.getDocument().getLength());
+            else {
+            	// If the user cancels the Windows Explorer before choosing a file
+                log.append("Save command cancelled by user." + newline);
+            }
         }
-     }
- 	
+    }
 
     /**
      * Create the GUI and show it.  For thread safety,
@@ -105,16 +126,4 @@ public class FileChooser extends JPanel
         frame.pack();
         frame.setVisible(true);
     }
-    //test to make sure that the code works properly
-//    public static void main(String[] args) {
-//        //Schedule a job for the event dispatch thread:
-//        //creating and showing this application's GUI.
-//        SwingUtilities.invokeLater(new Runnable() {
-//            public void run() {
-//                //Turn off bold font
-//                UIManager.put("swing.boldMetal", Boolean.FALSE); 
-//                createAndShowGUI();
-//            }
-//        });
-//    }
 }
