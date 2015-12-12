@@ -1,5 +1,6 @@
 
- //modified file chooser demo from official java tutorials
+//modified file chooser demo from official java tutorials
+//feeds file name to the admin tool
 package com.bangkura;
 
 import java.io.*;
