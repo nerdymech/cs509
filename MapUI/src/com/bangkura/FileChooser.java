@@ -7,13 +7,13 @@ import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.SwingUtilities;
 import javax.swing.filechooser.*;
+
 
 public class FileChooser extends JPanel
                              implements ActionListener {
     static private final String newline = "\n";
-    JButton openButton;
+    JButton openButton, saveButton;
     JTextArea log;
     JFileChooser fc;
 
@@ -38,12 +38,15 @@ public class FileChooser extends JPanel
         //Create the open button.  
         openButton = new JButton("Open a File...");
         openButton.addActionListener(this);
-
+        
+        //Create the save button.
+        saveButton = new JButton("Save a File...");
+        saveButton.addActionListener(this);
 
         //For layout purposes, put the buttons in a separate panel
         JPanel buttonPanel = new JPanel(); //use FlowLayout
         buttonPanel.add(openButton);
-       //buttonPanel.add(saveButton);
+        buttonPanel.add(saveButton);
 
         //Add the buttons and the log to this panel.
         add(buttonPanel, BorderLayout.PAGE_START);
@@ -69,7 +72,21 @@ public class FileChooser extends JPanel
             log.setCaretPosition(log.getDocument().getLength());
             }
 
+        //Handle save button action.
+        else if (e.getSource() == saveButton) {
+        	
+        	int returnVal = fc.showSaveDialog(FileChooser.this);
+        	if (returnVal == JFileChooser.APPROVE_OPTION) {
+        		File file = fc.getSelectedFile();
+        		//This is where a real application would save the file.
+        		log.append("Saving: " + file.getName() + "." + newline);
+        	} else {
+        		log.append("Save command cancelled by user." + newline);
+        	}
+        	log.setCaretPosition(log.getDocument().getLength());
         }
+     }
+ 	
 
     /**
      * Create the GUI and show it.  For thread safety,
