@@ -1,5 +1,6 @@
 package com.bangkura;
 import java.awt.CardLayout;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -27,6 +28,8 @@ import javax.swing.UIManager;
 
 import com.bangkura.Entity.Edge;
 import com.bangkura.Entity.Point;
+
+
 
 public class AdminTool extends JPanel{
 	//absolute position of the image
