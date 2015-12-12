@@ -22,6 +22,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
 import com.bangkura.Entity.Edge;
 import com.bangkura.Entity.Point;
 
@@ -44,6 +47,7 @@ public class AdminTool extends JPanel{
 	//zoom buttons
 	JButton zoomin = new JButton("+");
 	JButton zoomout = new JButton("-");
+	JButton selectImage = new JButton("Add Map");
 	
 	String building_name = null;
 	
@@ -143,10 +147,12 @@ public class AdminTool extends JPanel{
 		this.setLayout(null);
 		zoomin.setBounds(900,550, 50, 50);
 		zoomout.setBounds(900,610, 50, 50);
+		selectImage.setBounds(100,25,100,75);
 		this.add(buttonpanel);
 		this.add(zoomin);
 		this.add(zoomout);
 		this.add(menu);
+		this.add(selectImage);
 		
 		//Initial of the combobox
 		Vector<String> building_menu_item = new Vector<String>();
@@ -224,6 +230,23 @@ public class AdminTool extends JPanel{
 			}
 		});
 		
+		selectImage.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				SwingUtilities.invokeLater(new Runnable() {
+		            public void run() {
+		                //Turn off bold font
+		                UIManager.put("swing.boldMetal", Boolean.FALSE); 
+		                FileChooser fc = new FileChooser();
+		                fc.createAndShowGUI();
+		            }
+		        });
+			}
+		});
+
+
 		//listener for the drag function
 		this.addMouseListener(new MouseListener() {
 			
