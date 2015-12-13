@@ -5,6 +5,7 @@ package com.bangkura;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Vector;
 import java.util.regex.Pattern;
 import java.awt.*;
 import java.awt.event.*;
@@ -15,7 +16,7 @@ import javax.swing.*;
 
 public class FileChooser extends JPanel implements ActionListener {
     static private final String newline = "\n";
-    JButton openButton;
+    JButton openButton, deleteButton;
     JTextArea log;
     JFileChooser fc;
 
@@ -39,10 +40,13 @@ public class FileChooser extends JPanel implements ActionListener {
         //Create the open button.  
         openButton = new JButton("Open and Save File");
         openButton.addActionListener(this);
+        deleteButton = new JButton("Delete a Map");
+        deleteButton.addActionListener(this);
 
         //For layout purposes, put the buttons in a separate panel
         JPanel buttonPanel = new JPanel(); //use FlowLayout
         buttonPanel.add(openButton);
+        buttonPanel.add(deleteButton);
 
         //Add the buttons and the log to this panel.
         add(buttonPanel, BorderLayout.PAGE_START);
@@ -63,8 +67,8 @@ public class FileChooser extends JPanel implements ActionListener {
             // Create a variable to contain the absolute location of the location you want to
             // save the file to
             String s2 = s + "\\Maps\\" + fc.getSelectedFile().getName();
-            System.out.println(s2);
-            System.out.println(fc.getSelectedFile().getName());
+            //System.out.println(s2);
+            //System.out.println(fc.getSelectedFile().getName());
             
             // Variables needed to search through the Maps folder
             String folderPath = s + "\\Maps\\";
@@ -78,11 +82,13 @@ public class FileChooser extends JPanel implements ActionListener {
 	            boolean restart = true;
 	            int filesLeft = listOfFiles.length;
 	            
+	            /*
 	            // Print to the console for testing purposes
 	            if (listOfFiles.length == 0)
 	            	System.out.println("There are no images inside the Maps folder.");
 	            else
 	            	System.out.println("List of images:");
+	            */
 	            
 	            // While loop used here in case if a new file is selected and already exists
 	            while (restart == true) {
@@ -174,6 +180,17 @@ public class FileChooser extends JPanel implements ActionListener {
           	      	// Save the file to the project
           	      	ImageIO.write(bufferedImage, "jpg", file);
           	      	
+          	      	/*AdminTool at = new AdminTool();
+          	      	at.model.addElement(at.building_menu_item.get(at.building_menu_item.size() - 1));
+          	      	at.getImages();
+          	      	repaint();*/
+          	      	//AdminTool at2 = new AdminTool();
+          	      	//System.out.println(at.model.getElementAt(at.building_menu_item.size() - 1));
+          	      	
+          	      	/*for (String name : at.building_menu_item) {
+                    	System.out.println(name.substring(0, name.lastIndexOf('.')));
+                    }*/
+          	      	
           	      	// Log to the Window's console that the file is being read
           	      	log.append("Saving: " + file.getName() + "." + newline);
           	    } catch (Exception e1) {
@@ -183,6 +200,31 @@ public class FileChooser extends JPanel implements ActionListener {
             else {
             	// If the user cancels the Windows Explorer before choosing a file
                 log.append("Save command cancelled by user." + newline);
+            }
+        }
+        else if (e.getSource() == deleteButton) {
+        	JFileChooser fcd = new JFileChooser(s + "\\Maps\\");
+        	
+        	int returnVal = fcd.showOpenDialog(FileChooser.this);
+
+        	if (returnVal == JFileChooser.APPROVE_OPTION) {
+                File file = fcd.getSelectedFile();
+                
+                log.append("Selecting: " + file.getName() + "." + newline);
+                
+                if (file.delete()) {
+                    System.out.println(file.getName() + " has been deleted!");
+                    log.append("Deleting: " + file.getName() + "." + newline);
+                    
+                    /*AdminTool at = new AdminTool();
+                    at.building_menu_item.removeElement(file.getName().substring(0, file.getName().lastIndexOf('.')));
+                    at.getImages();
+                    at.repaint();*/
+                } else {
+                    System.out.println("Delete operation has failed.");
+                }
+            } else {
+                log.append("Selecting command cancelled by user." + newline);
             }
         }
     }

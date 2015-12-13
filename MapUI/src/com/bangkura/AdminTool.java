@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 import java.util.regex.Pattern;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -33,8 +34,6 @@ import javax.swing.UIManager;
 
 import com.bangkura.Entity.Edge;
 import com.bangkura.Entity.Point;
-
-
 
 public class AdminTool extends JPanel{
 	//absolute position of the image
@@ -58,21 +57,15 @@ public class AdminTool extends JPanel{
 	JButton selectImage = new JButton("Add Map");
 	
 	String building_name = null;
-	
 	PointLabel new_point = null;
-	
 	AdminButtonPanel buttonpanel = new AdminButtonPanel();
-	
 	Image img = Toolkit.getDefaultToolkit().getImage("welcome.jpg");
-	
-	JComboBox<Vector<String>> map_select_menu = null;
-	
+	DefaultComboBoxModel<String> model = null;
+	JComboBox map_select_menu = null;
+	Vector<String> building_menu_item = null;
 	DatabaseMethods DB = new DatabaseMethods();
-	
 	ArrayList<PointLabel> pointlist = new ArrayList<PointLabel>();
-	
 	PointEditingMenu menu = new PointEditingMenu();
-	
 	PointLabel start_point = null;
 	
 	ArrayList<Edge> edgelist = new ArrayList<Edge>();
@@ -139,7 +132,7 @@ public class AdminTool extends JPanel{
 			});
 		}
 		
-		// Create variables to hold the absolute path fo the project
+		// Create variables to hold the absolute path of the project
 		Path currentRelativePath = Paths.get("");
     	String s = currentRelativePath.toAbsolutePath().toString();
 		String folderPath = s + "\\Maps\\";
@@ -158,12 +151,17 @@ public class AdminTool extends JPanel{
 	/***
 	 * Initializes the combobox for selected the buildings
 	 */
-	private File[] getImages() {
+	protected Vector<String> getImages() {
 		// Store the path of the project into a variable
     	Path currentRelativePath = Paths.get("");
     	String s = currentRelativePath.toAbsolutePath().toString();
 		String folderPath = s + "\\Maps\\";
         File mapImage = new File(folderPath);
+        
+        // Initialize the combobox with null
+     	building_menu_item = new Vector<String>();
+     	building_menu_item.removeAllElements();
+     	building_menu_item.add("null");
         
 		// Create a variable to hold the list of images
         File[] listOfFiles = mapImage.listFiles();
@@ -171,21 +169,24 @@ public class AdminTool extends JPanel{
         // Search through the Maps directory
 		if (mapImage.isDirectory()) {
 			
+			/*
 			// Print to console for testing purposes
 			if (listOfFiles.length == 0)
 				System.out.println("There are no maps inside the Maps Folder");
 			else
-				System.out.println("List of images:");
-			 
+				System.out.println("List of images:");	
+			*/
+			
 			for (File file : listOfFiles) {
 				if(!file.isDirectory()) {
-					System.out.println(file.getName().substring(0, file.getName().lastIndexOf('.')));
+					//System.out.println(file.getName().substring(0, file.getName().lastIndexOf('.')));
+					building_menu_item.add(file.getName().substring(0, file.getName().lastIndexOf('.')));
+					//model.addElement(building_menu_item.get(building_menu_item.size() - 1));
 				}
 			}
 		}
 		
-		// Return the list of images
-		return listOfFiles;
+		return building_menu_item;
 	}
 	
 	public AdminTool() {
@@ -201,14 +202,12 @@ public class AdminTool extends JPanel{
 		this.add(zoomout);
 		this.add(menu);
 		this.add(selectImage);
-		
-		// Initialize the combobox with null and campus
-		Vector<String> building_menu_item = new Vector<String>();
-		building_menu_item.add("null");
-		building_menu_item.add("campus");
-		
+	
 		// Call getImages to fill in the read of the combobox with all of the images in the Maps folder
-		File[] listOfFiles = getImages();
+		building_menu_item = getImages();
+		
+		model = new DefaultComboBoxModel<>(building_menu_item);
+		map_select_menu = new JComboBox(model);
 		
 		// Original code here
 		/*building_menu_item.add("Campus Center 1st Floor");
@@ -216,16 +215,7 @@ public class AdminTool extends JPanel{
 		building_menu_item.add("Campus Center 3rd Floor");
 		building_menu_item.add("Project Center 1st Floor");
 		building_menu_item.add("Project Center 2nd Floor");*/
-		
-		// Search through the list of image files and parse out just the image name without the extension
-		// and add it to the combo box
-		for (File file : listOfFiles) {
-			if(!file.isDirectory()) {
-				building_menu_item.add(file.getName().substring(0, file.getName().lastIndexOf('.')));
-			}
-		}
-		
-		map_select_menu = new JComboBox(building_menu_item);
+
 		map_select_menu.setBounds(300,20,350,40);
 		this.add(map_select_menu);
 		map_select_menu.addItemListener(new ItemListener() {
