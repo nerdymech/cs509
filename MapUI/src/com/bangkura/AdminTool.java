@@ -14,6 +14,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.File;
 import java.io.IOException;
@@ -37,8 +38,9 @@ import javax.swing.UIManager;
 
 import com.bangkura.Entity.Edge;
 import com.bangkura.Entity.Point;
+import com.bangkura.MapImages;
 
-public class AdminTool extends JPanel{
+public class AdminTool extends JPanel implements WindowListener,ActionListener{
 	//absolute position of the image
 	int absolute_x = 0;
 	int absolute_y = 0;
@@ -152,51 +154,50 @@ public class AdminTool extends JPanel{
 		}
 	}
 	
-	/***
-	 * Initializes the combobox for selecting a map
-	 */
-	protected Vector<String> getImages() {
-		// Store the path of the project into a variable
-    	Path currentRelativePath = Paths.get("");
-    	String s = currentRelativePath.toAbsolutePath().toString();
-		String folderPath = s + "\\Maps\\";
-        File mapImage = new File(folderPath);
-        
-        // Initialize the combobox with null
-     	building_menu_item = new Vector<String>();
-     	building_menu_item.removeAllElements();
-     	building_menu_item.add("null");
-        
-		// Create a variable to hold the list of images
-        File[] listOfFiles = mapImage.listFiles();
-		
-        // Search through the Maps directory
-		if (mapImage.isDirectory()) {
-			
-			
-			// Print to console for testing purposes
-			if (listOfFiles.length == 0)
-				System.out.println("There are no maps inside the Maps Folder");
-			else
-				System.out.println("List of images:");	
-			
-			for (File file : listOfFiles) {
-				if(!file.isDirectory()) {
-					//System.out.println(file.getName().substring(0, file.getName().lastIndexOf('.')));
-					building_menu_item.add(file.getName().substring(0, file.getName().lastIndexOf('.')));
-					//model.addElement(building_menu_item.get(building_menu_item.size() - 1));
-				}
-			}
-		}
-		
-		return building_menu_item;
-	}
-//	
-//	//update images list when a map is added or removed
-//	public static void updateMapList(){
-//		
-//	}
 	
+	//moved code below to its own class called MapImages.java
+//	/***
+//	 * Initializes the combobox for selecting a map
+//	 */
+//	protected Vector<String> getImages() {
+//		// Store the path of the project into a variable
+//    	Path currentRelativePath = Paths.get("");
+//    	String s = currentRelativePath.toAbsolutePath().toString();
+//		String folderPath = s + "\\Maps\\";
+//        File mapImage = new File(folderPath);
+//        
+//        // Initialize the combobox with null
+//     	building_menu_item = new Vector<String>();
+//     	building_menu_item.removeAllElements();
+//     	building_menu_item.add("null");
+//        
+//		// Create a variable to hold the list of images
+//        File[] listOfFiles = mapImage.listFiles();
+//		
+//        // Search through the Maps directory
+//		if (mapImage.isDirectory()) {
+//			
+//			
+//			// Print to console for testing purposes
+//			if (listOfFiles.length == 0)
+//				System.out.println("There are no maps inside the Maps Folder");
+//			else
+//				System.out.println("List of images:");	
+//			
+//			for (File file : listOfFiles) {
+//				if(!file.isDirectory()) {
+//					//System.out.println(file.getName().substring(0, file.getName().lastIndexOf('.')));
+//					building_menu_item.add(file.getName().substring(0, file.getName().lastIndexOf('.')));
+//					//model.addElement(building_menu_item.get(building_menu_item.size() - 1));
+//				}
+//			}
+//		}
+//		
+//		return building_menu_item;
+//	}
+
+	
+	@SuppressWarnings("unchecked")
 	public AdminTool() {
 		//initialization of the AdminTool frame
 		this.setBounds(0,0,WEIDTH,HEIGHT);
@@ -211,10 +212,14 @@ public class AdminTool extends JPanel{
 		this.add(selectImage);
 	
 		// Call getImages to fill in the read of the combobox with all of the images in the Maps folder
-		building_menu_item = getImages();
+		Vector<String> building_menu_item = MapImages.getImages();
 		
+//		
 		model = new DefaultComboBoxModel<>(building_menu_item);
+
 		map_select_menu = new JComboBox(model);
+
+
 		
 		// Original code here
 		/*building_menu_item.add("Campus Center 1st Floor");
@@ -493,6 +498,55 @@ public class AdminTool extends JPanel{
 	
 	private int back_y(int y) {
 		return (int)((y - absolute_y)/ratio);
+	}
+
+	@Override
+	public void windowOpened(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	//this method is the one that monitors the class MapTool to see if the window in FileChooser was closed
+	@Override
+	public void windowClosed(WindowEvent MapTool) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowIconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowActivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeactivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

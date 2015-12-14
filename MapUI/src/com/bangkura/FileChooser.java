@@ -1,4 +1,10 @@
-//modified file chooser demo from official java tutorials
+/*
+ * Creates window for you to add/delete map images from the application
+ * when user closes the frame, windowListener pass event to MapImages to update list of maps
+ * 
+ * Files are automatically saved into the Maps folder
+ * 
+ * */
 //feeds file name to the admin tool
 package com.bangkura;
 
@@ -54,13 +60,6 @@ public class FileChooser extends JPanel implements ActionListener {
         
     }
     
-    WindowListener myExitListener = new WindowAdapter(){
-    	@Override
-    	public void windowClosing(WindowEvent e){
-//    		AdminTool.getImages();
-    			
-    		}
-    	};
 
     public void actionPerformed(ActionEvent e) {
     	// Store the path of the project into a variable
@@ -253,8 +252,9 @@ public class FileChooser extends JPanel implements ActionListener {
         //Create and set up the window.
         JFrame frame = new JFrame("Choose File");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        //when frame closes, windowListener will run
-        frame.addWindowListener(myExitListener);
+        
+        //when frame closes, windowListener will run on MapImages to update list of maps
+        frame.addWindowListener(new MapImages());
 
         //Add content to the window.
         frame.add(new FileChooser());
