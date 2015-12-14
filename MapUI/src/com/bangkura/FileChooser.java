@@ -51,7 +51,16 @@ public class FileChooser extends JPanel implements ActionListener {
         //Add the buttons and the log to this panel
         add(buttonPanel, BorderLayout.PAGE_START);
         add(logScrollPane, BorderLayout.CENTER);
+        
     }
+    
+    WindowListener myExitListener = new WindowAdapter(){
+    	@Override
+    	public void windowClosing(WindowEvent e){
+//    		AdminTool.getImages();
+    			
+    		}
+    	};
 
     public void actionPerformed(ActionEvent e) {
     	// Store the path of the project into a variable
@@ -242,8 +251,10 @@ public class FileChooser extends JPanel implements ActionListener {
      */
     protected void createAndShowGUI() {
         //Create and set up the window.
-        JFrame frame = new JFrame("FileChooserDemo");
+        JFrame frame = new JFrame("Choose File");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        //when frame closes, windowListener will run
+        frame.addWindowListener(myExitListener);
 
         //Add content to the window.
         frame.add(new FileChooser());
@@ -252,4 +263,8 @@ public class FileChooser extends JPanel implements ActionListener {
         frame.pack();
         frame.setVisible(true);
     }
-}
+
+	
+		
+	}
+

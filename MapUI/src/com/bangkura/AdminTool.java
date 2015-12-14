@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -12,6 +13,8 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowListener;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -54,6 +57,7 @@ public class AdminTool extends JPanel{
 	//zoom buttons
 	JButton zoomin = new JButton("+");
 	JButton zoomout = new JButton("-");
+	//wrap text in button through html
 	JButton selectImage = new JButton("<html><center>"+"Add or"+"<br>"+"Delete Map"+"</center></html>");
 	
 	String building_name = null;
@@ -187,10 +191,14 @@ public class AdminTool extends JPanel{
 		
 		return building_menu_item;
 	}
+//	
+//	//update images list when a map is added or removed
+//	public static void updateMapList(){
+//		
+//	}
 	
 	public AdminTool() {
-		// TODO Auto-generated constructor stub
-		//initial
+		//initialization of the AdminTool frame
 		this.setBounds(0,0,WEIDTH,HEIGHT);
 		this.setLayout(null);
 		zoomin.setBounds(900,550, 50, 50);
@@ -214,11 +222,13 @@ public class AdminTool extends JPanel{
 		building_menu_item.add("Campus Center 3rd Floor");
 		building_menu_item.add("Project Center 1st Floor");
 		building_menu_item.add("Project Center 2nd Floor");*/
-
+		
+		//init the dropdown menu to select maps from
 		map_select_menu.setBounds(300,20,350,40);
 		this.add(map_select_menu);
 		map_select_menu.addItemListener(new ItemListener() {
 			
+			//changes the map when you select a new building in the dropdown
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				// TODO Auto-generated method stub
@@ -229,7 +239,7 @@ public class AdminTool extends JPanel{
 				}
 			}
 		});
-		
+		//allows you to add points to the coordinates database with descriptions
 		menu.save_button.addActionListener(new ActionListener() {
 			
 			@Override
@@ -282,7 +292,7 @@ public class AdminTool extends JPanel{
 		});
 		
 		selectImage.addActionListener(new ActionListener() {
-			
+			//add a new map to the GUI
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -292,9 +302,12 @@ public class AdminTool extends JPanel{
 		                UIManager.put("swing.boldMetal", Boolean.FALSE); 
 		                FileChooser fc = new FileChooser();
 		                fc.createAndShowGUI();
+		               	
+		                }
 		            }
-		        });
+		        );
 			}
+		    	
 		});
 
 		//listener for the drag function
@@ -481,5 +494,7 @@ public class AdminTool extends JPanel{
 	private int back_y(int y) {
 		return (int)((y - absolute_y)/ratio);
 	}
+
+
 	
 }
