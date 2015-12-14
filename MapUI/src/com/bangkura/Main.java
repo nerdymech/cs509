@@ -18,7 +18,7 @@ import com.bangkura.Entity.User;
 public class Main {
 	// JFrame made public so the object can be called within this class
 	// and in SideBar.java without passing the object
-	public static JFrame jf = new JFrame("hello");
+	public static JFrame jf = new JFrame("GuideWPI");
 	
 	public static void main(String[] args) {
 		DatabaseMethods DB = new DatabaseMethods();

@@ -37,8 +37,8 @@ public class FileChooser extends JPanel implements ActionListener {
         //default chooses files only
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
-        //Create the open button.  
-        openButton = new JButton("Open and Save File");
+        //Create the open and delete buttons  
+        openButton = new JButton("Open and Save a Map");
         openButton.addActionListener(this);
         deleteButton = new JButton("Delete a Map");
         deleteButton.addActionListener(this);
@@ -48,7 +48,7 @@ public class FileChooser extends JPanel implements ActionListener {
         buttonPanel.add(openButton);
         buttonPanel.add(deleteButton);
 
-        //Add the buttons and the log to this panel.
+        //Add the buttons and the log to this panel
         add(buttonPanel, BorderLayout.PAGE_START);
         add(logScrollPane, BorderLayout.CENTER);
     }
@@ -134,6 +134,9 @@ public class FileChooser extends JPanel implements ActionListener {
 										else if (tokens[tokens.length - 1].equals(fc.getSelectedFile().getName())) {
 											System.out.println("Error! The file already exists! Please choose another one.");
 											log.append("Error! The file already exists! Please choose another one." + newline);
+											//add in popup window
+											JPanel errorPanel = new JPanel(); 
+											JOptionPane.showMessageDialog(errorPanel, "Error! The file already exists. Please choose another one.","Error: Map Exists", JOptionPane.ERROR_MESSAGE);
 											returnVal = fc.showOpenDialog(FileChooser.this);
 											filesLeft = listOfFiles.length;
 											restart = true;
@@ -222,6 +225,9 @@ public class FileChooser extends JPanel implements ActionListener {
                     at.repaint();*/
                 } else {
                     System.out.println("Delete operation has failed.");
+                    JPanel deleteError = new JPanel(); 
+					JOptionPane.showMessageDialog(deleteError, "Delete operation has failed.", "Error", JOptionPane.ERROR_MESSAGE);
+                    
                 }
             } else {
                 log.append("Selecting command cancelled by user." + newline);

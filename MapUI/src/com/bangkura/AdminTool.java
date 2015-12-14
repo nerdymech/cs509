@@ -54,7 +54,7 @@ public class AdminTool extends JPanel{
 	//zoom buttons
 	JButton zoomin = new JButton("+");
 	JButton zoomout = new JButton("-");
-	JButton selectImage = new JButton("Add Map");
+	JButton selectImage = new JButton("<html><center>"+"Add or"+"<br>"+"Delete Map"+"</center></html>");
 	
 	String building_name = null;
 	PointLabel new_point = null;
@@ -149,7 +149,7 @@ public class AdminTool extends JPanel{
 	}
 	
 	/***
-	 * Initializes the combobox for selected the buildings
+	 * Initializes the combobox for selecting a map
 	 */
 	protected Vector<String> getImages() {
 		// Store the path of the project into a variable
@@ -169,13 +169,12 @@ public class AdminTool extends JPanel{
         // Search through the Maps directory
 		if (mapImage.isDirectory()) {
 			
-			/*
+			
 			// Print to console for testing purposes
 			if (listOfFiles.length == 0)
 				System.out.println("There are no maps inside the Maps Folder");
 			else
 				System.out.println("List of images:");	
-			*/
 			
 			for (File file : listOfFiles) {
 				if(!file.isDirectory()) {
