@@ -257,7 +257,7 @@ public class MapDisplay extends JPanel{
 					handlePath(sidebar.path);
 					building_name = path_buildings.get(0);
 					building_label.setText(building_name);
-					img = Toolkit.getDefaultToolkit().getImage(building_name+".jpg");
+					img = Toolkit.getDefaultToolkit().getImage("\\Maps\\"+building_name+".jpg");
 					repaint();
 					if(path_buildings != null  && path_buildings.size() > 1) {
 						previous_button.setVisible(true);
@@ -304,7 +304,7 @@ public class MapDisplay extends JPanel{
 						if(i+1 < path_buildings.size()) {
 							building_name =  path_buildings.get(i+1);
 							building_label.setText(building_name);
-							img = Toolkit.getDefaultToolkit().getImage(building_name + ".jpg");
+							img = Toolkit.getDefaultToolkit().getImage("\\Maps\\"+building_name + ".jpg");
 							repaint();
 							break;
 						}
@@ -312,7 +312,7 @@ public class MapDisplay extends JPanel{
 							
 							building_name =  path_buildings.get(0);
 							building_label.setText(building_name);
-							img = Toolkit.getDefaultToolkit().getImage(building_name+".jpg");
+							img = Toolkit.getDefaultToolkit().getImage("\\Maps\\"+building_name+".jpg");
 							repaint();
 							break;
 						}
@@ -332,14 +332,14 @@ public class MapDisplay extends JPanel{
 						if(i-1 >= 0) {
 							building_name =  path_buildings.get(i-1);
 							building_label.setText(building_name);
-							img = Toolkit.getDefaultToolkit().getImage(building_name + ".jpg");
+							img = Toolkit.getDefaultToolkit().getImage("\\Maps\\"+building_name + ".jpg");
 							repaint();
 							break;
 						}
 						else {
 							building_name =  path_buildings.get(path_buildings.size() - 1);
 							building_label.setText(building_name);
-							img = Toolkit.getDefaultToolkit().getImage(building_name+".jpg");
+							img = Toolkit.getDefaultToolkit().getImage("\\Maps\\"+building_name+".jpg");
 							repaint();
 							break;
 						}
