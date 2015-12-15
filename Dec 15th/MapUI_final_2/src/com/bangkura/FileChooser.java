@@ -66,12 +66,12 @@ public class FileChooser extends JPanel implements ActionListener {
             
             // Create a variable to contain the absolute location of the location you want to
             // save the file to
-            String s2 = s + "\\Maps\\" + fc.getSelectedFile().getName();
+            String s2 = s + fc.getSelectedFile().getName();
             //System.out.println(s2);
             //System.out.println(fc.getSelectedFile().getName());
             
             // Variables needed to search through the Maps folder
-            String folderPath = s + "\\Maps\\";
+            String folderPath = s;
             File mapImage = new File(folderPath);
             
             // Search through the directory
@@ -206,7 +206,7 @@ public class FileChooser extends JPanel implements ActionListener {
             }
         }
         else if (e.getSource() == deleteButton) {
-        	JFileChooser fcd = new JFileChooser(s + "\\Maps\\");
+        	JFileChooser fcd = new JFileChooser(s);
         	
         	int returnVal = fcd.showOpenDialog(FileChooser.this);
 

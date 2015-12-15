@@ -17,7 +17,7 @@ public class RoutMap extends JLabel{
 		// TODO Auto-generated constructor stub
 		this.building_name = map_name;
 		this.setBounds(0,0,1000,1000);
-		this.setIcon(new ImageIcon("\\Maps\\"+map_name+".jpg"));
+		this.setIcon(new ImageIcon(map_name+".jpg"));
 		this.points = points;
 	}
 	@Override

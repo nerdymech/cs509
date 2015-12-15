@@ -23,7 +23,7 @@ public class MapImages extends WindowAdapter{
 		// Store the path of the project into a variable
     	Path currentRelativePath = Paths.get("");
     	String s = currentRelativePath.toAbsolutePath().toString();
-		String folderPath = s + "\\Maps\\" ;
+		String folderPath = s  ;
         File mapImage = new File(folderPath);
         
         // Initialize the combobox with null
