@@ -16,6 +16,8 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.lang.reflect.Array;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -138,7 +140,12 @@ public class AdminTool extends JPanel implements WindowListener{
 				}
 			});
 		}
-		img = Toolkit.getDefaultToolkit().getImage(image_name + ".jpg");
+		// Create variables to hold the absolute path of the project
+		Path currentRelativePath = Paths.get("");
+    	String s = currentRelativePath.toAbsolutePath().toString();
+		String folderPath = s + "\\Maps\\";
+		// Replace the welcome.jpg image with the map of the building selected from the Maps folder
+		img = Toolkit.getDefaultToolkit().getImage(folderPath + image_name + ".jpg");
 		repaint();
 	}
 	
