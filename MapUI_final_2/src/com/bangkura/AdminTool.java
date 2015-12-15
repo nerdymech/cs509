@@ -13,21 +13,26 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 import com.bangkura.Entity.Edge;
 import com.bangkura.Entity.Point;
 
-public class AdminTool extends JPanel{
+public class AdminTool extends JPanel implements WindowListener{
 	final int BUILDING = 0;
 	final int LOCATION = 1;
 	final int STAIR = 2;
@@ -51,25 +56,19 @@ public class AdminTool extends JPanel{
 	//zoom buttons
 	JButton zoomin = new JButton("+");
 	JButton zoomout = new JButton("-");
+	//wrap text in button through html
+	JButton selectImage = new JButton("<html><center>"+"Add or"+"<br>"+"Delete Map"+"</center></html>");
 	
 	String building_name = null;
-	
 	PointLabel new_point = null;
-	
 	AdminButtonPanel buttonpanel = new AdminButtonPanel();
-	
 	Image img = Toolkit.getDefaultToolkit().getImage("welcome.jpg");
-	
+	DefaultComboBoxModel<String> model = null;
 	JComboBox<Vector<String>> map_select_menu = null;
-	
 	DatabaseMethods DB = new DatabaseMethods();
-	
 	ArrayList<PointLabel> pointlist = new ArrayList<PointLabel>();
-	
 	PointEditingMenu menu = new PointEditingMenu();
-	
 	PointLabel start_point = null;
-	
 	ArrayList<Edge> edgelist = new ArrayList<Edge>();
 	
 	private void changeBuilding(String image_name) {
@@ -149,28 +148,36 @@ public class AdminTool extends JPanel{
 		}
 	}
 	
+	
 	public AdminTool() {
-		// TODO Auto-generated constructor stub
-		//initial
+		//initialization of the AdminTool frame
 		this.setBounds(0,0,WEIDTH,HEIGHT);
 		this.setLayout(null);
 		zoomin.setBounds(900,550, 50, 50);
 		zoomout.setBounds(900,610, 50, 50);
+		selectImage.setBounds(100,25,100,75);
 		this.add(buttonpanel);
 		this.add(zoomin);
 		this.add(zoomout);
 		this.add(menu);
+		this.add(selectImage);
 		
 		//Initial of the combobox
-		Vector<String> building_menu_item = new Vector<String>();
-		building_menu_item.add("null");
-		building_menu_item.add("campus");
-		building_menu_item.add("Campus Center 1st Floor");
-		building_menu_item.add("Campus Center 2nd Floor");
-		building_menu_item.add("Campus Center 3rd Floor");
-		building_menu_item.add("Project Center 1st Floor");
-		building_menu_item.add("Project Center 2nd Floor");
-		map_select_menu = new JComboBox(building_menu_item);
+		// Call getImages to fill in the read of the combobox with all of the images in the Maps folder
+		Vector<String> building_menu_item = MapImages.getImages();
+		model = new DefaultComboBoxModel<>(building_menu_item);
+
+		map_select_menu = new JComboBox(model);
+				
+//		Vector<String> building_menu_item = new Vector<String>();
+//		building_menu_item.add("null");
+//		building_menu_item.add("campus");
+//		building_menu_item.add("Campus Center 1st Floor");
+//		building_menu_item.add("Campus Center 2nd Floor");
+//		building_menu_item.add("Campus Center 3rd Floor");
+//		building_menu_item.add("Project Center 1st Floor");
+//		building_menu_item.add("Project Center 2nd Floor");
+//		map_select_menu = new JComboBox(building_menu_item);
 		map_select_menu.setBounds(300,20,350,40);
 		this.add(map_select_menu);
 		map_select_menu.addItemListener(new ItemListener() {
@@ -184,6 +191,21 @@ public class AdminTool extends JPanel{
 					zoom();
 					repaint();
 				}
+			}
+		});
+		selectImage.addActionListener(new ActionListener(){
+			//add a new map to the GUI
+			@Override
+			public void actionPerformed(ActionEvent e){
+				SwingUtilities.invokeLater(new Runnable(){
+					public void run(){
+						//Turn off bold font
+						UIManager.put("swing.boldMetal", Boolean.FALSE);
+						FileChooser fc = new FileChooser();
+						fc.createAndShowGUI();
+					}
+				}
+				);
 			}
 		});
 		
@@ -458,6 +480,48 @@ public class AdminTool extends JPanel{
 	
 	private int back_y(int y) {
 		return (int)((y - absolute_y)/ratio);
+	}
+
+	@Override
+	public void windowOpened(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosed(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowIconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowActivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeactivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

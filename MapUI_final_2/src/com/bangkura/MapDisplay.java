@@ -76,7 +76,7 @@ public class MapDisplay extends JPanel{
 	
 	ArrayList<LocationLabel> location_array = new ArrayList<LocationLabel>();
 	//image displayed
-	Image img = Toolkit.getDefaultToolkit().getImage("campus.jpg");
+	Image img = Toolkit.getDefaultToolkit().getImage("Maps/campus.jpg");
 	
 	//database method
 	DatabaseMethods DB = new DatabaseMethods();
