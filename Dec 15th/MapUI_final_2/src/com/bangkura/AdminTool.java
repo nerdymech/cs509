@@ -17,12 +17,15 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 import com.bangkura.Entity.Edge;
 import com.bangkura.Entity.Point;
@@ -51,6 +54,8 @@ public class AdminTool extends JPanel{
 	//zoom buttons
 	JButton zoomin = new JButton("+");
 	JButton zoomout = new JButton("-");
+	//wrap text in button through html
+	JButton selectImage = new JButton("<html><center>"+"Add or"+"<br>"+"Delete Map"+"</center></html>");
 	
 	String building_name = null;
 	
@@ -59,6 +64,8 @@ public class AdminTool extends JPanel{
 	AdminButtonPanel buttonpanel = new AdminButtonPanel();
 	
 	Image img = Toolkit.getDefaultToolkit().getImage("welcome.jpg");
+	
+	DefaultComboBoxModel<String> model = null;
 	
 	JComboBox<Vector<String>> map_select_menu = null;
 	
@@ -156,21 +163,26 @@ public class AdminTool extends JPanel{
 		this.setLayout(null);
 		zoomin.setBounds(900,550, 50, 50);
 		zoomout.setBounds(900,610, 50, 50);
+		selectImage.setBounds(100,25,100,75);
 		this.add(buttonpanel);
 		this.add(zoomin);
 		this.add(zoomout);
 		this.add(menu);
+		this.add(selectImage);
 		
 		//Initial of the combobox
-		Vector<String> building_menu_item = new Vector<String>();
-		building_menu_item.add("null");
-		building_menu_item.add("campus");
-		building_menu_item.add("Campus Center 1st Floor");
-		building_menu_item.add("Campus Center 2nd Floor");
-		building_menu_item.add("Campus Center 3rd Floor");
-		building_menu_item.add("Project Center 1st Floor");
-		building_menu_item.add("Project Center 2nd Floor");
-		map_select_menu = new JComboBox(building_menu_item);
+		Vector<String> building_menu_item = MapImages.getImages();
+		model = new DefaultComboBoxModel<>(building_menu_item);
+		map_select_menu = new JComboBox(model);
+//		Vector<String> building_menu_item = new Vector<String>();
+//		building_menu_item.add("null");
+//		building_menu_item.add("campus");
+//		building_menu_item.add("Campus Center 1st Floor");
+//		building_menu_item.add("Campus Center 2nd Floor");
+//		building_menu_item.add("Campus Center 3rd Floor");
+//		building_menu_item.add("Project Center 1st Floor");
+//		building_menu_item.add("Project Center 2nd Floor");
+//		map_select_menu = new JComboBox(building_menu_item);
 		map_select_menu.setBounds(300,20,350,40);
 		this.add(map_select_menu);
 		map_select_menu.addItemListener(new ItemListener() {
@@ -184,6 +196,23 @@ public class AdminTool extends JPanel{
 					zoom();
 					repaint();
 				}
+			}
+		});
+		selectImage.addActionListener(new ActionListener(){
+			//add a new map to the GUI
+			@Override
+			public void actionPerformed(ActionEvent e){
+				SwingUtilities.invokeLater(new Runnable(){
+					public void run(){
+						//Turn off bold font
+						UIManager.put("swing.boldMetal", Boolean.FALSE);
+						FileChooser fc = new FileChooser();
+						fc.createAndShowGUI();
+						map_select_menu = new JComboBox(model);
+						repaint();
+					}
+				}
+				);
 			}
 		});
 		

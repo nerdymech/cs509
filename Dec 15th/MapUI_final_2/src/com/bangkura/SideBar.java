@@ -347,16 +347,19 @@ public class SideBar extends JPanel{
 					// TODO Auto-generated method stub
 					textField.setText(tmpLabel.getText());
 					String[] pointinfo = tmpLabel.getText().split(", ");
-					ArrayList<Point> tmparray = DB.ReadBuildingPoints(pointinfo[1]);
+					ArrayList<Point> tmparray = DB.ReadBuildingPoints(pointinfo[0]);
+					System.out.println("select fav " + pointinfo[0] + ", " + pointinfo[3]);
 					if(cursor == 0) {
 						for(Point p:tmparray) {
-							if(p.getFeature().equals(pointinfo[0]))
+							if(p.getPointID() == Integer.parseInt(pointinfo[3])) {
 								start_point = p;
+								System.out.println("start point " + p.getPointID());
+							}
 						}
 					}
 					if(cursor == 1) {
 						for(Point p:tmparray) {
-							if(p.getFeature().equals(pointinfo[0]))
+							if(p.getPointID() == Integer.parseInt(pointinfo[3]))
 								end_point = p;
 						}
 					}
