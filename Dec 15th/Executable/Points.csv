@@ -1,0 +1,265 @@
+Point_ID,X,Y,Building,Floor,Attributes,Entrance ID,Room number,Feature nameImageURLShowOnMap
+1,1,1,1,1,1,1,1,1,1,false
+2,293,590,campus,0,0,0,Campus Center,Campus Center,Campus Center 1st Floor,false
+3,344,644,campus,0,0,0,Project Center,Project Center,Project Center 2nd Floor,false
+4,335,624,campus,0,1,0,Spring Square,Spring Square,Spring Square,false
+5,379,556,campus,0,1,0,Atwater Kent Lab,Atwater Kent Lab,Atwater Kent Lab,false
+6,418,576,campus,0,1,0,Fuller Lab,Fuller Lab,Fuller Lab,false
+7,377,608,campus,0,1,0,Salisbury Lab,Salisbury Lab,Salisbury Lab,false
+8,422,649,campus,0,1,0,Gordon Library,Gordon Library,Gordon Library,false
+10,173,469,campus,0,1,0,Parking Garage,Parking Garage,Parking Garage,false
+11,255,476,campus,0,1,0,Higgins House Lot,Higgins House Lot,Higgins House Lot,false
+12,149,645,campus,0,1,0,Sports Center,Sports Center,Sports Center,false
+13,182,821,campus,0,1,0,International House,International House,International House,false
+14,992,599,campus,0,1,0,Gateway Garage,Gateway Garage,Gateway Garage,false
+15,209,505,campus,0,1,0,null,null,null,false
+16,173,562,campus,0,1,0,null,null,null,false
+17,166,576,campus,0,1,0,null,null,null,false
+18,178,587,campus,0,1,0,null,null,null,false
+19,175,612,campus,0,1,0,null,null,null,false
+20,288,617,campus,0,1,0,null,null,null,false
+21,279,651,campus,0,1,0,null,null,null,false
+22,223,642,campus,0,1,0,null,null,null,false
+23,218,650,campus,0,1,0,null,null,null,false
+24,342,562,campus,0,1,0,null,null,null,false
+25,346,626,campus,0,1,0,null,null,null,false
+26,369,580,campus,0,1,0,null,null,null,false
+27,396,591,campus,0,1,0,null,null,null,false
+28,406,610,campus,0,1,0,null,null,null,false
+29,399,643,campus,0,1,0,null,null,null,false
+30,989,636,campus,0,1,0,null,null,null,false
+31,898,653,campus,0,1,0,null,null,null,false
+32,902,712,campus,0,1,0,null,null,null,false
+33,820,729,campus,0,1,0,null,null,null,false
+34,503,569,campus,0,1,0,null,null,null,false
+35,493,616,campus,0,1,0,null,null,null,false
+36,463,619,campus,0,1,0,null,null,null,false
+37,166,820,campus,0,1,0,null,null,null,false
+38,176,757,campus,0,1,0,null,null,null,false
+39,305,779,campus,0,1,0,null,null,null,false
+40,408,676,campus,0,1,0,null,null,null,false
+41,423,672,campus,0,1,0,null,null,null,false
+42,434,683,campus,0,1,0,null,null,null,false
+43,450,625,campus,0,1,0,null,null,null,false
+44,96,712,campus,0,1,0,null,null,null,false
+45,117,747,campus,0,1,0,null,null,null,false
+46,250,683,Campus Center 2nd Floor,0,2,0,201,Entrance,campus,false
+49,71,447,Campus Center 2nd Floor,0,1,0,207,Room ,Image Url,false
+50,134,377,Campus Center 2nd Floor,0,1,0,214,Washroom,Image Url,false
+51,113,225,Campus Center 2nd Floor,0,1,0,217,Room ,Image Url,false
+52,45,265,Campus Center 2nd Floor,0,1,0,222,Room ,Image Url,false
+53,85,287,Campus Center 2nd Floor,0,1,0,220,Room ,Image Url,false
+54,195,183,Campus Center 2nd Floor,0,2,0,11,Stairs,Campus Center 1st Floor,false
+55,198,172,Campus Center 2nd Floor,0,2,0,Room Number,Stairs Up,Campus Center 3rd Floor,false
+56,241,203,Campus Center 2nd Floor,0,1,0,226,Room ,Image Url,false
+57,289,203,Campus Center 2nd Floor,0,1,0,227,Room ,Image Url,false
+58,288,225,Campus Center 2nd Floor,0,1,0,226,Room,Image Url,false
+59,130,309,Campus Center 2nd Floor,0,1,0,218,Room ,Image Url,false
+60,223,309,Campus Center 2nd Floor,0,1,0,232,Room ,Image Url,false
+61,223,359,Campus Center 2nd Floor,0,1,0,234,Room ,Image Url,false
+62,271,359,Campus Center 2nd Floor,0,1,0,233,Room ,Image Url,false
+63,299,294,Campus Center 2nd Floor,0,1,0,230,Room ,Image Url,false
+64,214,390,Campus Center 2nd Floor,0,1,0,235,Room ,Image Url,false
+65,304,469,Campus Center 2nd Floor,0,2,0,12,Stairs,Campus Center 1st Floor,false
+66,317,473,Campus Center 2nd Floor,0,2,0,12,Stairs Up,Campus Center 3rd Floor,false
+67,100,265,Campus Center 2nd Floor,0,1,0,null,null,null,false
+68,177,221,Campus Center 2nd Floor,0,1,0,null,null,null,false
+69,185,204,Campus Center 2nd Floor,0,1,0,null,null,null,false
+70,272,234,Campus Center 2nd Floor,0,1,0,null,null,null,false
+71,274,293,Campus Center 2nd Floor,0,1,0,null,null,null,false
+72,273,321,Campus Center 2nd Floor,0,1,0,null,null,null,false
+73,176,310,Campus Center 2nd Floor,0,1,0,null,null,null,false
+74,177,379,Campus Center 2nd Floor,0,1,0,null,null,null,false
+75,179,449,Campus Center 2nd Floor,0,1,0,null,null,null,false
+76,218,449,Campus Center 2nd Floor,0,1,0,null,null,null,false
+77,200,529,Campus Center 2nd Floor,0,1,0,null,null,null,false
+78,284,583,Campus Center 2nd Floor,0,1,0,null,null,null,false
+79,918,445,Project Center 2nd Floor,0,2,0,200A,Entrance,campus,false
+80,893,531,Project Center 2nd Floor,0,1,0,202,Room ,Image Url,false
+82,317,444,Project Center 2nd Floor,0,2,0,200C,Stairs,Project Center 1st Floor,false
+83,76,395,Project Center 2nd Floor,0,1,0,212A,Room ,Image Url,false
+84,257,398,Project Center 2nd Floor,0,1,0,212,Room ,Image Url,false
+85,170,477,Project Center 2nd Floor,0,1,0,211,Room ,Image Url,false
+86,258,540,Project Center 2nd Floor,0,1,0,201A,Room ,Image Url,false
+87,231,565,Project Center 2nd Floor,0,1,0,210,Room ,Image Url,false
+88,134,677,Project Center 2nd Floor,0,1,0,208,Room ,Image Url,false
+89,229,675,Project Center 2nd Floor,0,1,0,207,Room ,Image Url,false
+90,579,682,Project Center 2nd Floor,0,1,0,206,Room ,Image Url,false
+91,660,683,Project Center 2nd Floor,0,1,0,205,Room ,Image Url,false
+92,827,681,Project Center 2nd Floor,0,1,0,204,Room,Image Url,false
+93,891,610,Project Center 2nd Floor,0,1,0,203,Room ,Image Url,false
+94,384,446,Project Center 2nd Floor,0,1,0,210A,Room ,Image Url,false
+95,429,358,Project Center 2nd Floor,0,1,0,213,Room ,Image Url,false
+96,516,355,Project Center 2nd Floor,0,1,0,214,Room ,Image Url,false
+97,710,356,Project Center 2nd Floor,0,1,0,215,Room ,Image Url,false
+98,802,351,Project Center 2nd Floor,0,1,0,216,Room ,Image Url,false
+99,882,387,Project Center 2nd Floor,0,1,0,219,Room ,Image Url,false
+100,648,565,Project Center 2nd Floor,0,1,0,201,Room ,Image Url,false
+101,308,561,Project Center 2nd Floor,0,1,0,210C,Room ,Image Url,false
+102,261,476,Project Center 2nd Floor,0,1,0,null,null,null,false
+103,307,478,Project Center 2nd Floor,0,1,0,null,null,null,false
+104,305,673,Project Center 2nd Floor,0,1,0,null,null,null,false
+105,583,602,Project Center 2nd Floor,0,1,0,null,null,null,false
+106,827,615,Project Center 2nd Floor,0,1,0,null,null,null,false
+107,831,534,Project Center 2nd Floor,0,1,0,null,null,null,false
+108,833,452,Project Center 2nd Floor,0,1,0,null,null,null,false
+109,880,450,Project Center 2nd Floor,0,1,0,null,null,null,false
+110,805,452,Project Center 2nd Floor,0,1,0,null,null,null,false
+111,711,451,Project Center 2nd Floor,0,1,0,null,null,null,false
+112,383,475,Project Center 2nd Floor,0,1,0,null,null,null,false
+113,428,452,Project Center 2nd Floor,0,1,0,null,null,null,false
+114,516,449,Project Center 2nd Floor,0,1,0,null,null,null,false
+115,650,451,Project Center 2nd Floor,0,1,0,null,null,null,false
+116,413,431,Campus Center 1st Floor,0,2,0,134,Entrance,campus,false
+117,724,534,Campus Center 1st Floor,0,2,0,13,stairs,Campus Center 2nd Floor,false
+118,195,190,Campus Center 3rd Floor,0,2,0,31,Stairs,Campus Center 2nd Floor,false
+119,63,272,Campus Center 1st Floor,0,1,0,123,Room,Image Url,false
+120,117,281,Campus Center 1st Floor,0,1,0,122,Room ,Image Url,false
+121,123,436,Campus Center 1st Floor,0,1,0,114,Washroom,Image Url,false
+122,211,382,Campus Center 1st Floor,0,1,0,127,Room,Image Url,false
+123,208,332,Campus Center 1st Floor,0,1,0,126,Room ,Image Url,false
+124,282,317,Campus Center 1st Floor,0,1,0,129,Room,Image Url,false
+125,264,438,Campus Center 1st Floor,0,1,0,128,Room,Image Url,false
+126,285,393,Campus Center 1st Floor,0,1,0,130,Room,Image Url,false
+127,292,502,Campus Center 1st Floor,0,2,0,12,Stairs,Campus Center 2nd FLoor,false
+128,82,546,Campus Center 1st Floor,0,1,0,113,Room,Image Url,false
+129,38,612,Campus Center 1st Floor,0,1,0,112,Room,Image Url,false
+130,76,767,Campus Center 1st Floor,0,1,0,110,Room,Image Url,false
+131,93,784,Campus Center 1st Floor,0,1,0,109,Room,Image Url,false
+132,522,794,Campus Center 1st Floor,0,1,0,147,Room,Image Url,false
+133,280,670,Campus Center 1st Floor,0,1,0,158,Room,Image Url,false
+134,391,611,Campus Center 1st Floor,0,1,0,157,Room,Image Url,false
+135,665,536,Campus Center 1st Floor,0,1,0,137A,Room,Image Url,false
+136,176,239,Campus Center 1st Floor,0,2,0,11,Stairs,Campus Center 2nd Floor,false
+137,519,693,Campus Center 1st Floor,0,1,0,154,Room,Image Url,false
+138,717,734,Campus Center 1st Floor,0,1,0,150,Room,Image Url,false
+139,801,637,Campus Center 1st Floor,0,1,0,140,Room,Image Url,false
+140,893,799,Campus Center 1st Floor,0,2,0,1001,Entrance,campus,false
+141,884,610,Campus Center 1st Floor,0,2,0,1002,Entrance,campus,false
+142,845,791,Campus Center 1st Floor,0,1,0,144,Room,Image Url,false
+143,628,634,Campus Center 1st Floor,0,1,0,152,Room ,Image Url,false
+144,724,687,Campus Center 1st Floor,0,1,0,145,Room ,Image Url,false
+145,161,332,Campus Center 1st Floor,0,1,0,null,null,null,false
+146,164,382,Campus Center 1st Floor,0,1,0,null,null,null,false
+147,156,283,Campus Center 1st Floor,0,1,0,null,null,null,false
+148,160,438,Campus Center 1st Floor,0,1,0,null,null,null,false
+149,78,611,Campus Center 1st Floor,0,1,0,null,null,null,false
+150,44,745,Campus Center 1st Floor,0,1,0,null,null,null,false
+151,76,747,Campus Center 1st Floor,0,1,0,null,null,null,false
+152,94,747,Campus Center 1st Floor,0,1,0,null,null,null,false
+153,273,788,Campus Center 1st Floor,0,1,0,null,null,null,false
+154,753,793,Campus Center 1st Floor,0,1,0,null,null,null,false
+155,258,382,Campus Center 1st Floor,0,1,0,null,null,null,false
+156,297,366,Campus Center 1st Floor,0,1,0,null,null,null,false
+157,166,543,Campus Center 1st Floor,0,1,0,null,null,null,false
+158,257,516,Campus Center 1st Floor,0,1,0,null,null,null,false
+159,305,400,Campus Center 1st Floor,0,1,0,null,null,null,false
+160,288,739,Campus Center 1st Floor,0,1,0,null,null,null,false
+161,396,692,Campus Center 1st Floor,0,1,0,null,null,null,false
+162,626,688,Campus Center 1st Floor,0,1,0,null,null,null,false
+163,722,566,Campus Center 1st Floor,0,1,0,null,null,null,false
+164,798,568,Campus Center 1st Floor,0,1,0,null,null,null,false
+165,813,605,Campus Center 1st Floor,0,1,0,null,null,null,false
+166,842,722,Campus Center 1st Floor,0,1,0,null,null,null,false
+167,842,727,Campus Center 1st Floor,0,1,0,null,null,null,false
+168,754,688,Campus Center 1st Floor,0,1,0,null,null,null,false
+169,795,683,Campus Center 1st Floor,0,1,0,null,null,null,false
+170,468,559,Campus Center 1st Floor,0,1,0,null,null,null,false
+171,527,560,Campus Center 1st Floor,0,1,0,null,null,null,false
+172,664,562,Campus Center 1st Floor,0,1,0,null,null,null,false
+173,684,560,Campus Center 1st Floor,0,1,0,null,null,null,false
+174,685,536,Campus Center 1st Floor,0,1,0,null,null,null,false
+175,165,569,Campus Center 1st Floor,0,1,0,null,null,null,false
+176,317,576,Campus Center 1st Floor,0,1,0,null,null,null,false
+177,114,549,Campus Center 2nd Floor,0,1,0,202,Room ,Image Url,false
+178,328,708,Campus Center 2nd Floor,0,1,0,254,Room,Image Url,false
+179,622,642,Campus Center 2nd Floor,0,1,0,251,Bookstore,Image Url,false
+180,845,643,Campus Center 2nd Floor,0,1,0,248,Room,Image Url,false
+181,730,504,Campus Center 2nd Floor,0,2,0,13,Stairs,Campus Center 1st Floor,false
+182,731,483,Campus Center 2nd Floor,0,2,0,13,Stairs Up,Campus Center 3rd Floor,false
+183,832,528,Campus Center 2nd Floor,0,1,0,241,Room ,Image Url,false
+184,769,593,Campus Center 2nd Floor,0,1,0,250,Room ,Image Url,false
+185,329,681,Campus Center 2nd Floor,0,1,0,null,null,null,false
+186,423,507,Campus Center 2nd Floor,0,1,0,null,null,null,false
+187,619,522,Campus Center 2nd Floor,0,1,0,null,null,null,false
+188,769,642,Campus Center 2nd Floor,0,1,0,null,null,null,false
+189,846,553,Campus Center 2nd Floor,0,1,0,null,null,null,false
+190,731,527,Campus Center 2nd Floor,0,1,0,null,null,null,false
+191,56,277,Campus Center 3rd Floor,0,1,0,314,Room ,Image Url,false
+192,81,221,Campus Center 3rd Floor,0,1,0,316,Room ,Image Url,false
+193,80,320,Campus Center 3rd Floor,0,1,0,313,Room ,Image Url,false
+194,263,232,Campus Center 3rd Floor,0,1,0,316,Room ,Image Url,false
+195,241,293,Campus Center 3rd Floor,0,1,0,324,Room,Image Url,false
+197,353,498,Campus Center 3rd Floor,0,2,0,32,Stairs,Campus Center 3rd Floor,false
+198,583,473,Campus Center 3rd Floor,0,1,0,331,Room ,Image Url,false
+199,185,661,Campus Center 3rd Floor,0,1,0,301,Room ,Image Url,false
+200,124,407,Campus Center 3rd Floor,0,1,0,310,Washroom,Image Url,false
+201,245,449,Campus Center 3rd Floor,0,1,0,327,Room ,Image Url,false
+202,296,416,Campus Center 3rd Floor,0,1,0,320,Room ,Image Url,false
+203,292,391,Campus Center 3rd Floor,0,1,0,325,Room ,Image Url,false
+204,203,388,Campus Center 3rd Floor,0,1,0,326,Room,Image Url,false
+205,123,476,Campus Center 3rd Floor,0,1,0,304,Room ,Image Url,false
+206,388,617,Campus Center 3rd Floor,0,1,0,343,Room ,Image Url,false
+207,544,614,Campus Center 3rd Floor,0,1,0,342,Room ,Image Url,false
+208,690,679,Campus Center 3rd Floor,0,1,0,341,Room ,Image Url,false
+210,887,677,Campus Center 3rd Floor,0,1,0,339,Room ,Image Url,false
+211,772,530,Campus Center 3rd Floor,0,2,0,33,Stairs,Campus Center 2nd FLoor,false
+212,883,554,Campus Center 3rd Floor,0,1,0,334,Room ,Image Url,false
+213,482,511,Campus Center 3rd Floor,0,1,0,330,Room ,Image Url,false
+214,176,198,Campus Center 3rd Floor,0,1,0,null,null,null,false
+215,177,232,Campus Center 3rd Floor,0,1,0,null,null,null,false
+216,302,313,Campus Center 3rd Floor,0,1,0,320,Room ,Image Url,false
+217,279,259,Campus Center 3rd Floor,0,1,0,null,null,null,false
+218,299,259,Campus Center 3rd Floor,0,1,0,null,null,null,false
+219,277,294,Campus Center 3rd Floor,0,1,0,null,null,null,false
+220,173,288,Campus Center 3rd Floor,0,1,0,null,null,null,false
+221,83,278,Campus Center 3rd Floor,0,1,0,null,null,null,false
+222,172,393,Campus Center 3rd Floor,0,1,0,null,null,null,false
+223,171,476,Campus Center 3rd Floor,0,1,0,null,null,null,false
+224,192,448,Campus Center 3rd Floor,0,1,0,null,null,null,false
+225,254,413,Campus Center 3rd Floor,0,1,0,null,null,null,false
+226,265,393,Campus Center 3rd Floor,0,1,0,null,null,null,false
+227,217,518,Campus Center 3rd Floor,0,1,0,null,null,null,false
+228,321,612,Campus Center 3rd Floor,0,1,0,null,null,null,false
+229,345,543,Campus Center 3rd Floor,0,1,0,null,null,null,false
+230,389,532,Campus Center 3rd Floor,0,1,0,null,null,null,false
+231,552,542,Campus Center 3rd Floor,0,1,0,null,null,null,false
+232,622,540,Campus Center 3rd Floor,0,1,0,null,null,null,false
+233,626,609,Campus Center 3rd Floor,0,1,0,null,null,null,false
+234,685,548,Campus Center 3rd Floor,0,1,0,null,null,null,false
+235,778,553,Campus Center 3rd Floor,0,1,0,null,null,null,false
+236,813,554,Campus Center 3rd Floor,0,1,0,null,null,null,false
+238,243,346,Project Center 1st Floor,0,1,0,104A,Room ,Image Url,false
+239,84,401,Project Center 1st Floor,0,1,0,102,Room ,Image Url,false
+240,92,532,Project Center 1st Floor,0,1,0,101,Room ,Image Url,false
+241,246,400,Project Center 1st Floor,0,1,0,103,Room ,Image Url,false
+242,340,442,Project Center 1st Floor,0,1,0,100E,Room ,Image Url,false
+243,338,525,Project Center 1st Floor,0,1,0,101B,Room ,Image Url,false
+244,569,342,Project Center 1st Floor,0,1,0,107,Room ,Image Url,false
+245,677,343,Project Center 1st Floor,0,1,0,108,Room ,Image Url,false
+246,769,344,Project Center 1st Floor,0,1,0,108A,Room ,Image Url,false
+247,837,346,Project Center 1st Floor,0,1,0,109,Room ,Image Url,false
+248,838,402,Project Center 1st Floor,0,1,0,109A,Room ,Image Url,false
+249,403,525,Project Center 1st Floor,0,1,0,106,Room ,Image Url,false
+250,822,502,Project Center 1st Floor,0,1,0,110,Room ,Image Url,false
+251,895,502,Project Center 1st Floor,0,1,0,111,Room ,Image Url,false
+252,846,732,Project Center 1st Floor,0,1,0,100A,Room ,Image Url,false
+253,844,680,Project Center 1st Floor,0,1,0,113,Room ,Image Url,false
+254,895,678,Project Center 1st Floor,0,1,0,114,Room ,Image Url,false
+255,741,593,Project Center 1st Floor,0,1,0,100B,Room ,Image Url,false
+257,336,359,Project Center 1st Floor,0,2,0,100F,Stairs,Project Center 2nd Floor,false
+258,335,401,Project Center 1st Floor,0,1,0,null,null,null,false
+259,73,335,Project Center 2nd Floor,0,1,0,212AA,Room,Image Url,false
+260,398,434,Project Center 1st Floor,0,1,0,null,null,null,false
+261,567,406,Project Center 1st Floor,0,1,0,null,null,null,false
+262,704,726,Project Center 1st Floor,0,1,0,null,null,null,false
+263,754,729,Project Center 1st Floor,0,1,0,null,null,null,false
+264,901,730,Project Center 1st Floor,0,1,0,null,null,null,false
+265,817,588,Project Center 1st Floor,0,1,0,null,null,null,false
+266,740,508,Project Center 1st Floor,0,1,0,null,null,null,false
+267,736,406,Project Center 1st Floor,0,1,0,null,null,null,false
+268,775,404,Project Center 1st Floor,0,1,0,null,null,null,false
+269,155,644,Campus Center 2nd Floor,0,1,0,203,Salon,Image Url,false
+270,128,335,Project Center 1st Floor,0,1,0,104,Room,Image Url,false
+271,773,504,Project Center 1st Floor,0,1,0,102C,Room,Image Url,false
+272,295,618,campus,0,1,0,null,null,null,false273,380,561,campus,0,1,0,null,null,null,null
